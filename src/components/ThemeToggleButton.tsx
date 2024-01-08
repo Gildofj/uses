@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IoSunny, IoMoon } from "react-icons/io5/index.js";
 
 const themes = ["light", "dark"];
 
@@ -32,17 +33,18 @@ export default function ThemeToggleButton() {
   }, []);
 
   return isMounted ? (
-    <div className="inline-flex items-center p-[1px] bg-purple-300 dark:bg-zinc-600">
+    <div className="inline-flex items-center p-[1px] rounded-3xl bg-purple-200 dark:bg-zinc-600 ">
       {themes.map(t => {
         const checked = t === theme;
         return (
           <button
             key={t}
-            data-checked={checked}
-            className="data-[checked]:bg-white cursor-pointer rounded-full"
+            className={`${
+              checked ? "bg-white" : ""
+            } cursor-pointer rounded-3xl p-2`}
             onClick={toggleTheme}
           >
-            {t}
+            {t === "light" ? <IoSunny /> : <IoMoon />}
           </button>
         );
       })}
