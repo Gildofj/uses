@@ -40,7 +40,7 @@ export default function ThemeToggleButton() {
           <button
             key={t}
             className={`${
-              checked ? "bg-white" : ""
+              checked ? "bg-white text-black" : ""
             } cursor-pointer rounded-3xl p-2`}
             onClick={toggleTheme}
           >
