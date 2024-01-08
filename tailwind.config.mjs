@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "Atkinson", "sans-serif"],
+        inter: ["Inter", "Verdana", "sans-serif"],
       },
     },
   },
