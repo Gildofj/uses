@@ -11,7 +11,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 
 <a
   data-active={isActive}
-  class="inline-block py-4 px-2 text-black no-underline active:font-bold border-b-4 border-solid border-transparent data-[active]:border-b-black"
+  class="inline-block py-4 px-2 text-black dark:text-white no-underline active:font-bold border-b-4 border-solid border-transparent data-[active]:border-b-black dark:data-[active]:border-b-white"
   href={href}
   {...props}
 >
