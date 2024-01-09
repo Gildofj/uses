@@ -1,11 +1,10 @@
 ---
-import { LiaLaughSquint } from "react-icons/lia/index.js";
-
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Body from "../components/Body.astro";
 import Content from "../components/Content.astro";
 import Footer from "../components/Footer.astro";
+import Masthead from "../components/Masthead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -17,31 +16,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <Body>
     <Header title={SITE_TITLE} />
     <main class="pt-16">
-      <h1 class="font-inter text-center font-bold text-3xl">What i use</h1>
+      <Masthead />
       <Content className="">
         <section>
-          <p class="text-center indent-4">
-            Olá! Antes de qualquer coisa seja bem vindo ao meu blog!
-          </p>
           <p class="mb-8 indent-4">
-            Esse blog foi criado com o intuito de compartilhar meu setup e
-            treinar minhas habilidades com algumas tecnologias recentes.
-            Atualmente eu trabalho como desenvolvedor de software, mais
-            especificamente como Full Stack, e nas horas vagas finjo que sou
-            gamer 😂, sendo assim maior parte do meu dia eu fico sentado na
-            frente do computador, tornando meu setup parte importante da minha
-            vida atualmente. Além de que acho que como projeto pessoal vai ser
-            interessante acompanhar a evolução de minhas skills como
-            desenvolvedor e do meu setup em si. Também gostaria de deixar
-            registrado que me inspirei no desenvolvedor indie <a
-              class="text-purple-400"
+            Este blog foi concebido com o propósito de compartilhar meu setup e
+            aprimorar minhas habilidades com algumas tecnologias recentes.
+            Atualmente, atuo como desenvolvedor de software, mais
+            especificamente como Full Stack. Nas horas vagas, gosto de fingir
+            que sou gamer 😂. Dessa forma, a maior parte do meu dia é passada
+            diante do computador, tornando meu setup uma parte crucial da minha
+            rotina. Além disso, vejo este projeto como uma oportunidade
+            empolgante para acompanhar a evolução das minhas habilidades como
+            desenvolvedor e do meu próprio setup. Gostaria de registrar que
+            minha inspiração para iniciar esse projeto veio do desenvolvedor
+            indie
+            <a
+              class="text-purple-500"
               href="https://github.com/craftzdog"
-              target="_blank">Craftdogz</a
-            > que possui o canal <a
-              class="text-purple-400"
+              target="_blank"
+            >
+              Craftdogz
+            </a>, que mantém o canal <a
+              class="text-purple-500"
               href="https://www.youtube.com/@devaslife"
-              target="_blank">devaslife</a
-            > para iniciar esse projeto.
+              target="_blank"
+            >
+              devaslife
+            </a>.
           </p>
         </section>
       </Content>

@@ -9,10 +9,13 @@ import {
 } from "react-icons/io5/index.js";
 ---
 
-<header class="fixed w-full pq2 z-20 backdrop-blur-md font-inter">
+<header class="fixed w-full pq2 z-20 backdrop-blur-md font-fira-code">
   <nav class="flex items-center justify-between">
-    <h2 class="font-semibold tracking-tighter p-2 font-inter text-lg">
-      <a class="no-underline inline-flex items-center gap-2" href="/">
+    <h2 class="font-semibold tracking-tighter p-2 font-fira-code text-lg">
+      <a
+        class="no-underline inline-flex items-center gap-2"
+        href={PORTFOLIO_URL}
+      >
         <IoCodeSlash style={{ fontSize: "1.7rem" }} />
         Gildo Junior
       </a>
@@ -22,20 +25,24 @@ import {
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 px-2">
       <ThemeToggleButton client:load />
-      <HeaderLink href={PORTFOLIO_URL} target="_blank">
-        <span class="sr-only">Meu portfolio pessoal</span>
-        <IoCodeSlash style={{ fontSize: "2rem" }} />
-      </HeaderLink>
-      <HeaderLink href={TWITTER_URL} target="_blank">
+      <a
+        class="inline-block text-black dark:text-white no-underline"
+        href={TWITTER_URL}
+        target="_blank"
+      >
         <span class="sr-only">Follow Me on Twitter</span>
         <IoLogoTwitter style={{ fontSize: "2rem" }} />
-      </HeaderLink>
-      <HeaderLink href={GITHUB_URL} target="_blank">
+      </a>
+      <a
+        class="inline-block text-black dark:text-white no-underline"
+        href={GITHUB_URL}
+        target="_blank"
+      >
         <span class="sr-only">Go to my Github</span>
         <IoLogoGithub style={{ fontSize: "2rem" }} />
-      </HeaderLink>
+      </a>
     </div>
   </nav>
 </header>

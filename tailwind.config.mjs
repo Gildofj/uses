@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ["Inter", "Verdana", "sans-serif"],
+        "fira-code": ["Fira Code", "Verdana", "sans-serif"],
       },
     },
   },
