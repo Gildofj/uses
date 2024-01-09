@@ -1,4 +1,6 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Body from "../components/Body.astro";
@@ -6,6 +8,10 @@ import Content from "../components/Content.astro";
 import Footer from "../components/Footer.astro";
 import Masthead from "../components/Masthead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
 ---
 
 <!doctype html>
@@ -45,6 +51,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
               devaslife
             </a>.
           </p>
+        </section>
+        <section>
+          <ul>
+            {
+              posts.map(post => (
+                <li>
+                  <a>{post.data.title}</a>
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </Content>
     </main>
