@@ -10,7 +10,7 @@ import Footer from "../components/Footer.astro";
 import Masthead from "../components/Masthead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("posts")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
@@ -58,7 +58,7 @@ const posts = (await getCollection("blog")).sort(
             {
               posts.map(post => (
                 <li class="text-center mb-4">
-                  <a href={`/blog/${post.slug}`}>
+                  <a href={`/posts/${post.slug}`}>
                     <Image
                       class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                       src={post.data.heroImage || ""}
