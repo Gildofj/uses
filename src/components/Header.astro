@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
-import { PORTFOLIO_URL, TWITTER_URL, GITHUB_URL } from "../consts";
+import { PORTFOLIO_URL, TWITTER_URL, GITHUB_URL, REPO_URL } from "../consts";
 import {
   IoCodeSlash,
   IoLogoGithub,
@@ -14,18 +14,21 @@ import {
     <h2
       class="font-semibold tracking-tighter p-2 font-fira-code text-lg leading-none"
     >
-      <a
-        class="no-underline inline-flex items-center gap-2"
-        href={PORTFOLIO_URL}
-      >
+      <a class="no-underline inline-flex items-center gap-2" href="/">
         <IoCodeSlash style={{ fontSize: "1.7rem" }} />
         Gildo Junior
       </a>
     </h2>
     <div class="items-center gap-6 hidden md:flex">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href={PORTFOLIO_URL}>About</HeaderLink>
+      <HeaderLink
+        class="inline-flex items-center gap-2"
+        href={REPO_URL}
+        target="_blank"
+      >
+        <IoLogoGithub /> Source
+      </HeaderLink>
     </div>
     <div class="flex items-center gap-3 px-2">
       <ThemeToggleButton client:load />
