@@ -11,7 +11,7 @@ import Masthead from "../components/Masthead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const posts = (await getCollection("posts")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+  (a, b) => a.data.createdAt.valueOf() - b.data.createdAt.valueOf(),
 );
 ---
 
