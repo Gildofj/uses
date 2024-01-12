@@ -1,11 +1,12 @@
 ---
 title: PC
 description: Meu computador
-date: 2024-01-11 22:26
+createdAt: 2024-01-11T22:26Z
 tags:
   - Periféricos
-heroImage: ../Images/PC/PC.png
+heroImage: /assets/PC/PC.jpeg
 ---
+
 # PC
 
 Meu computador é pica

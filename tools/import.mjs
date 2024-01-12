@@ -7,9 +7,16 @@ const __dirname = path.dirname(__filename);
 const home = "/home/gildofj/";
 
 const postsDir = path.join(home, "obsidian-vault/Uses/Posts");
-const imagesDir = path.join(home, "~/obsidian-vault/Uses/Images");
+const imagesDir = path.join(home, "obsidian-vault/Uses/Images");
 const contentDir = path.join(__dirname, "src/content/posts");
 const assetsDir = path.join(__dirname, "src/assets");
+
+const createDirectoryIfNotExists = directory => {
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+    console.log(`Created directory: ${directory}`);
+  }
+};
 
 const copyFile = (source, target) => {
   fs.copyFileSync(source, target);
@@ -17,6 +24,8 @@ const copyFile = (source, target) => {
 };
 
 const copyFilesFromDirectory = (sourceDir, targetDir) => {
+  createDirectoryIfNotExists(targetDir);
+
   const files = fs.readdirSync(sourceDir);
   files.forEach(file => {
     const sourcePath = path.join(sourceDir, file);
