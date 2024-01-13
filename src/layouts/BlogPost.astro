@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -23,12 +24,12 @@ const { title, description, heroImage } = Astro.props;
         <div class="mb-8">
           {
             heroImage && (
-              <img
+              <Image
                 class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                 width={1020}
                 height={510}
                 src={heroImage}
-                alt=""
+                alt="thumbnail image"
               />
             )
           }
