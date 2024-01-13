@@ -19,7 +19,6 @@
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.1.1",
-    "fs": "0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",

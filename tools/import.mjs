@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url.replace("/tools", ""));
 const __dirname = path.dirname(__filename);
-const home = "/home/gildofj/";
+const home = "/home/gildojunior/";
 
 const postsDir = path.join(home, "obsidian-vault/Uses/Posts");
 const imagesDir = path.join(home, "obsidian-vault/Uses/Images");
@@ -25,16 +25,18 @@ const copyFile = (source, target) => {
 
 const normalizeImagesToAstroMd = filePath => {
   const regexToGetValue = /!\[\[([^[\]]*)\]\]/g;
-  const regexToReplace = /!\[\[(.*?)\]\]/g;
+  const regexToReplace = /[!\[\]]/g;
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const images =
     fileContent
       .match(regexToGetValue)
       ?.map(image => image.replace(regexToReplace, "")) || [];
   const splitedFilePath = filePath.split("/");
-  const directoryName = splitedFilePath[splitedFilePath.lenght - 2];
+  const directoryName = splitedFilePath[splitedFilePath.length - 1].replace(
+    ".md",
+    "",
+  );
 
-  console.log(images);
   if (images.length) {
     let modifiedContent = fileContent;
     images.forEach(image => {
@@ -43,8 +45,9 @@ const normalizeImagesToAstroMd = filePath => {
         `![${image.split(".")[0]}](/assets/${directoryName}/${image})`,
       );
     });
-    fs.writeFileSync(filePath, modifiedContent, "utf-8");
+    return modifiedContent;
   }
+  return fileContent;
 };
 
 const copyFilesFromDirectory = (sourceDir, targetDir) => {
@@ -58,8 +61,13 @@ const copyFilesFromDirectory = (sourceDir, targetDir) => {
     if (fs.statSync(sourcePath).isDirectory()) {
       copyFilesFromDirectory(sourcePath, targetPath);
     } else {
-      normalizeImagesToAstroMd(sourcePath);
-      copyFile(sourcePath, targetPath);
+      if (sourcePath.includes("Posts")) {
+        const newContent = normalizeImagesToAstroMd(sourcePath);
+        fs.writeFileSync(targetPath, newContent, "utf-8");
+        console.log(`Rewrited file to target ${targetPath}`);
+      } else {
+        copyFile(sourcePath, targetPath);
+      }
     }
   });
 };
@@ -75,8 +83,13 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
       if (fs.statSync(sourcePath).isDirectory()) {
         copyFilesFromDirectory(sourcePath, targetPath);
       } else {
-        normalizeImagesToAstroMd(sourcePath);
-        copyFile(sourcePath, targetPath);
+        if (sourcePath.includes("Posts")) {
+          const newContent = normalizeImagesToAstroMd(sourcePath);
+          fs.writeFileSync(targetPath, newContent, "utf-8");
+          console.log(`Rewrited file to target ${targetPath}`);
+        } else {
+          copyFile(sourcePath, targetPath);
+        }
       }
     } else {
       // Handle file deletion here if needed
@@ -88,5 +101,4 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
 };
 
 watchAndCopyFiles(postsDir, contentDir);
-
 watchAndCopyFiles(imagesDir, assetsDir);
