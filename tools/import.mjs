@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url.replace("/tools", ""));
 const __dirname = path.dirname(__filename);
-const home = "/home/gildojunior/";
+const home = "/home/gildofj/";
 
 const postsDir = path.join(home, "obsidian-vault/Uses/Posts");
 const imagesDir = path.join(home, "obsidian-vault/Uses/Images");
