@@ -9,7 +9,11 @@ import Body from "../components/Body.astro";
 
 type Props = CollectionEntry<"posts">["data"];
 
-const { title, description, heroImage = "masthead-poster.png" } = Astro.props;
+const {
+  title,
+  description,
+  heroImage = "/uses/masthead-poster.png",
+} = Astro.props;
 ---
 
 <html lang="en">
