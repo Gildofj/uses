@@ -21,7 +21,7 @@ const posts = (await getCollection("posts"))
   {
     posts.map(post => (
       <li class="text-center mb-4">
-        <a href={`/posts/${post.slug}`}>
+        <a href={`/uses/posts/${post.slug}`}>
           <Image
             class="border border-slate-300 dark:border-zinc-700 rounded-xl"
             src={post.data.heroImage || "/uses/cover.jpeg"}
