@@ -6,7 +6,8 @@ import addClasses from "rehype-add-classes";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gildofj.github.io/uses/",
+  site: "https://gildofj.github.io",
+  base: "/uses",
   integrations: [
     sitemap(),
     react({
