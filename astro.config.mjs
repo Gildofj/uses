@@ -8,6 +8,7 @@ import addClasses from "rehype-add-classes";
 export default defineConfig({
   site: "https://gildofj.github.io",
   base: "/uses/",
+  output: "static",
   integrations: [
     sitemap(),
     react({
