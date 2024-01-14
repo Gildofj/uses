@@ -27,15 +27,13 @@ const normalizeImagesToAstroMd = filePath => {
   const regexToGetValue = /!\[\[([^[\]]*)\]\]/g;
   const regexToReplace = /[!\[\]]/g;
   const fileContent = fs.readFileSync(filePath, "utf-8");
+  const s = filePath.split("/");
+  const directoryName = s[s.length - 1].replace(".md", "");
+
   const images =
     fileContent
       .match(regexToGetValue)
       ?.map(image => image.replace(regexToReplace, "")) || [];
-  const splitedFilePath = filePath.split("/");
-  const directoryName = splitedFilePath[splitedFilePath.length - 1].replace(
-    ".md",
-    "",
-  );
 
   if (images.length) {
     let modifiedContent = fileContent;
@@ -50,6 +48,20 @@ const normalizeImagesToAstroMd = filePath => {
   return fileContent;
 };
 
+const verifyFileTypeAndCopy = (sourcePath, targetPath) => {
+  if (fs.statSync(sourcePath).isDirectory()) {
+    copyFilesFromDirectory(sourcePath, targetPath);
+  } else {
+    if (sourcePath.includes("Posts")) {
+      const newContent = normalizeImagesToAstroMd(sourcePath);
+      fs.writeFileSync(targetPath, newContent, "utf-8");
+      console.log(`Rewritten file to target ${targetPath}`);
+    } else {
+      copyFile(sourcePath, targetPath);
+    }
+  }
+};
+
 const copyFilesFromDirectory = (sourceDir, targetDir) => {
   createDirectoryIfNotExists(targetDir);
 
@@ -58,17 +70,7 @@ const copyFilesFromDirectory = (sourceDir, targetDir) => {
     const sourcePath = path.join(sourceDir, file);
     const targetPath = path.join(targetDir, file);
 
-    if (fs.statSync(sourcePath).isDirectory()) {
-      copyFilesFromDirectory(sourcePath, targetPath);
-    } else {
-      if (sourcePath.includes("Posts")) {
-        const newContent = normalizeImagesToAstroMd(sourcePath);
-        fs.writeFileSync(targetPath, newContent, "utf-8");
-        console.log(`Rewrited file to target ${targetPath}`);
-      } else {
-        copyFile(sourcePath, targetPath);
-      }
-    }
+    verifyFileTypeAndCopy(sourcePath, targetPath);
   });
 };
 
@@ -80,17 +82,7 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
     const targetPath = path.join(targetDir, filename);
 
     if (fs.existsSync(sourcePath)) {
-      if (fs.statSync(sourcePath).isDirectory()) {
-        copyFilesFromDirectory(sourcePath, targetPath);
-      } else {
-        if (sourcePath.includes("Posts")) {
-          const newContent = normalizeImagesToAstroMd(sourcePath);
-          fs.writeFileSync(targetPath, newContent, "utf-8");
-          console.log(`Rewrited file to target ${targetPath}`);
-        } else {
-          copyFile(sourcePath, targetPath);
-        }
-      }
+      verifyFileTypeAndCopy(sourcePath, targetPath);
     } else {
       // Handle file deletion here if needed
       console.log(`File deleted: ${targetPath}`);
