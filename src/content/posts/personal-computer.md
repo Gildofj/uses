@@ -1,7 +1,7 @@
 ---
 title: Personal Computer
 description: Computador de mesa / Desktop
-createdAt: 2024-01-11T22:26Z
+pubDate: 2024-01-11T22:26Z
 tags:
   - Computador
 heroImage: /assets/personal-computer/personal-computer.jpeg

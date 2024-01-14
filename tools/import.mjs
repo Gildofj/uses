@@ -77,7 +77,7 @@ const copyFilesFromDirectory = (sourceDir, targetDir) => {
 const watchAndCopyFiles = (sourceDir, targetDir) => {
   copyFilesFromDirectory(sourceDir, targetDir);
 
-  fs.watch(sourceDir, { recursive: true }, (eventType, filename) => {
+  fs.watch(sourceDir, { recursive: true }, (_, filename) => {
     const sourcePath = path.join(sourceDir, filename);
     const targetPath = path.join(targetDir, filename);
 

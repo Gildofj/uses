@@ -1,7 +1,7 @@
 ---
 title: T-Dagger Destroyer
 description: Teclado mecânico
-createdAt: 2024-01-14T01:21Z
+pubDate: 2024-01-14T01:21Z
 tags:
   - Computador
   - Periféricos

@@ -14,7 +14,7 @@ const posts = (await getCollection("posts"))
       ? p.data.tags?.map(t => t.toLowerCase()).includes(category.toLowerCase())
       : true,
   )
-  .sort((a, b) => a.data.createdAt.valueOf() - b.data.createdAt.valueOf());
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
