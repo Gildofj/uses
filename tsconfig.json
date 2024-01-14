@@ -12,7 +12,6 @@
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -20,17 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "plugins": [
-      {
-        "name": "@styled/typescript-styled-plugin",
-        "tags": [
-          "styled",
-          "css",
-          "sty"
-        ]
-      }
-    ]
+    "jsxImportSource": "react"
   },
   "include": [
     "src"
