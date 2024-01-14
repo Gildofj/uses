@@ -22,18 +22,16 @@ import {
     </h2>
     <div class="items-center gap-6 hidden md:flex">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href={PORTFOLIO_URL}>About</HeaderLink>
+      <HeaderLink href={PORTFOLIO_URL}>Sobre</HeaderLink>
       <HeaderLink
         class="inline-flex items-center gap-2"
         href={REPO_URL}
         target="_blank"
       >
-        <IoLogoGithub /> Source
+        <IoLogoGithub /> Código
       </HeaderLink>
     </div>
     <div class="flex items-center gap-3 px-2">
-      <ThemeToggleButton client:visible />
-      <DropdownMenu client:visible />
       <a
         class="inline-block text-black dark:text-white no-underline"
         href={TWITTER_URL}
@@ -50,6 +48,8 @@ import {
         <span class="sr-only">Go to my Github</span>
         <IoLogoGithub style={{ fontSize: "2rem" }} />
       </a>
+      <ThemeToggleButton client:visible />
+      <DropdownMenu client:visible />
     </div>
   </nav>
 </header>
