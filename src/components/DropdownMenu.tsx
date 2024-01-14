@@ -29,10 +29,10 @@ export default function DropdownMenu() {
             <div className="px-3 py-2 uppercase font-bold text-xs">
               Categories
             </div>
-            <DropdowMenuItem href="/categories/computador">
-              Computing
+            <DropdowMenuItem href="/uses/categories/computador">
+              Computador
             </DropdowMenuItem>
-            <DropdowMenuItem href="/categories/perifericos">
+            <DropdowMenuItem href="/uses/categories/perifericos">
               Periféricos
             </DropdowMenuItem>
           </div>
