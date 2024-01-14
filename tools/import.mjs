@@ -40,7 +40,7 @@ const normalizeImagesToAstroMd = filePath => {
     images.forEach(image => {
       modifiedContent = modifiedContent.replace(
         `![[${image}]]`,
-        `![${image.split(".")[0]}](/assets/${directoryName}/${image})`,
+        `![${image.split(".")[0]}](/uses/assets/${directoryName}/${image})`,
       );
     });
     return modifiedContent;

@@ -24,7 +24,7 @@ const posts = (await getCollection("posts"))
         <a href={`/posts/${post.slug}`}>
           <Image
             class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-            src={post.data.heroImage || "/cover.jpeg"}
+            src={post.data.heroImage || "/uses/cover.jpeg"}
             width={720 * 2}
             height={500 * 2}
             alt="Thumbnail"

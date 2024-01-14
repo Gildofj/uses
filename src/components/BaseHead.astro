@@ -43,6 +43,12 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Permission-Policy -->
+<meta
+  http-equiv="Permissions-Policy"
+  content="interest-cohort=(), user-id=()"
+/>
+
 <script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
