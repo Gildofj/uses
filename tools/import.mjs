@@ -11,7 +11,10 @@ const imagesDir = path.join(home, "obsidian-vault/Uses/Images");
 const contentDir = path.join(__dirname, "src/content/posts");
 const assetsDir = path.join(__dirname, "public/assets");
 
+const normalizePath = path => path.replace(/ /g, "-").toLowerCase();
+
 const createDirectoryIfNotExists = directory => {
+  console.log(directory);
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory, { recursive: true });
     console.log(`Created directory: ${directory}`);
@@ -28,7 +31,7 @@ const normalizeImagesToAstroMd = filePath => {
   const regexToReplace = /[!\[\]]/g;
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const s = filePath.split("/");
-  const directoryName = s[s.length - 1].replace(".md", "");
+  const directoryName = normalizePath(s[s.length - 1].replace(".md", ""));
 
   const images =
     fileContent
@@ -38,9 +41,12 @@ const normalizeImagesToAstroMd = filePath => {
   if (images.length) {
     let modifiedContent = fileContent;
     images.forEach(image => {
+      const normalizedImage = normalizePath(image);
       modifiedContent = modifiedContent.replace(
         `![[${image}]]`,
-        `![${image.split(".")[0]}](/uses/assets/${directoryName}/${image})`,
+        `![${
+          image.split(".")[0]
+        }](/uses/assets/${directoryName}/${normalizedImage})`,
       );
     });
     return modifiedContent;
@@ -68,7 +74,7 @@ const copyFilesFromDirectory = (sourceDir, targetDir) => {
   const files = fs.readdirSync(sourceDir);
   files.forEach(file => {
     const sourcePath = path.join(sourceDir, file);
-    const targetPath = path.join(targetDir, file);
+    const targetPath = path.join(targetDir, normalizePath(file));
 
     verifyFileTypeAndCopy(sourcePath, targetPath);
   });
@@ -79,7 +85,7 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
 
   fs.watch(sourceDir, { recursive: true }, (_, filename) => {
     const sourcePath = path.join(sourceDir, filename);
-    const targetPath = path.join(targetDir, filename);
+    const targetPath = path.join(targetDir, normalizePath(filename));
 
     if (fs.existsSync(sourcePath)) {
       verifyFileTypeAndCopy(sourcePath, targetPath);

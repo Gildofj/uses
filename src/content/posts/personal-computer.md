@@ -14,5 +14,5 @@ Com certeza nem tudo são flores, apesar dessas vantagens vem o ônus de perder 
 
 Caso estejam curiosos informarei especificações de meu PC a seguir:
 
-![especificacoes-PC](/uses/assets/personal-computer/especificacoes-PC.jpeg)
+![Especificaçoes PC](/uses/assets/personal-computer/especificaçoes-pc.jpeg)
 
