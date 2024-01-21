@@ -13,6 +13,7 @@ const {
   title,
   description,
   heroImage = "/uses/masthead-poster.png",
+  videos,
 } = Astro.props;
 ---
 
@@ -42,11 +43,24 @@ const {
         <div>{description}</div>
         <hr class="border-top border-zinc-400 my-4" />
         <slot />
+        {
+          videos && videos.length > 0 && (
+            <video
+              class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+              controls
+            >
+              {videos.map(video => (
+                <source src={video} type="video/mp4" />
+              ))}
+              Your browser does not support video tag.
+            </video>
+          )
+        }
         <span
           class="underline underline-offset-2 hover:text-purple-500 decoration-purple-500 text-2xl"
         ></span>
       </Content>
+      <Footer />
     </main>
-    <Footer />
   </Body>
 </html>
