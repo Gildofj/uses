@@ -55,6 +55,7 @@ const normalizeImagesToAstroMd = filePath => {
 };
 
 const verifyFileTypeAndCopy = (sourcePath, targetPath) => {
+  if (targetPath.includes("untitled")) return;
   if (fs.statSync(sourcePath).isDirectory()) {
     copyFilesFromDirectory(sourcePath, targetPath);
   } else {

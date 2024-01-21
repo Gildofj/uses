@@ -11,6 +11,8 @@ Como curto muito jogar, principalmente jogos competitivos, sempre tive o interes
 
 Claro que na época que comprei esse teclado não me atentei a alguns pontos, tendo em vista minha falta de conhecimento no assunto, depois de um tempo vi que o teclado numérico na lateral ocupava um espaço desnecessário para mim, tendo em vista que não uso muito ele no dia a dia e ele faz com que o teclado ocupe um espaço muito grande. Outro ponto é que esse teclado possui switches de clique outemu que são switches de custo mais baixo e tem fama de não possuir um bom funcionamento a longo prazo e o plástico utilizado no acabamento é o ABS que não é o mais resistente, sendo esse o plástico PBT.
 
-![Teclado Cima](/uses/assets/t-dagger-destroyer/teclado-cima.jpeg)****
+![Teclado Cima](/uses/assets/t-dagger-destroyer/teclado-cima.jpeg)
 
-Mas claro que nem tudo é desgraça, como disse ele foi um ótimo custo beneficio na época, e ainda considero até hoje, tendo em vista que ele é hot swappable (é possível trocar os switches), o problema dos switches outemu pode ser resolvido facilmente. Além de que tanto o acabamento quanto as teclas são muito bem feitos, possuindo teclas doubleshot que evita desgaste de uso na mesma, e alumínio no acabamento, tornando muito mais forte e resistente a estrutura do teclado.
+Certamente, nem tudo foi negativo. Conforme mencionado, o produto apresentou uma excelente relação custo-benefício na época, e essa percepção perdura até os dias atuais. Uma das vantagens notáveis é a capacidade de ser hot swappable, permitindo a troca dos switches de maneira prática. O problema associado aos switches Outemu pode ser facilmente solucionado com essa característica.
+
+Além disso, destaco a qualidade do acabamento e das teclas, que se mantêm notavelmente bem-feitos. As teclas doubleshot, por exemplo, são uma excelente adição, prevenindo o desgaste por uso constante. O acabamento em alumínio não apenas contribui para a estética, mas também confere uma estrutura de teclado mais robusta e resistente.
