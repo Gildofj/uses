@@ -8,9 +8,14 @@ function classNames(...classes: string[]) {
 type Props = {
   href: string;
   children: ReactNode;
+  className?: string;
 };
 
-export default function DropdowMenuItem({ href, children }: Props) {
+export default function DropdowMenuItem({
+  href,
+  children,
+  className = "",
+}: Props) {
   return (
     <Menu.Item>
       {({ active }) => (
@@ -19,6 +24,7 @@ export default function DropdowMenuItem({ href, children }: Props) {
           className={classNames(
             active ? "bg-purple-200 dark:bg-zinc-700" : "",
             "block px-4 py-2 text-sm",
+            className,
           )}
         >
           {children}

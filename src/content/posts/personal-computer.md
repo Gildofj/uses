@@ -3,7 +3,7 @@ title: Personal Computer
 description: Computador de mesa / Desktop
 pubDate: 2024-01-11T22:26Z
 tags:
-  - Computador
+  - Computação
 heroImage: /uses/assets/personal-computer/personal-computer.jpeg
 ---
 Atualmente atuo como desenvolvedor full-stack e muitas vezes é necessário que eu rode diversos programas ao mesmo tempo, ou até mesmo rode programas muito pesados como o Android Studio, por exemplo, que por simular devices para testar seu código mobile acaba exigindo bastante do computador e de sua memória. Tendo isso em vista, e pensando em meu lazer também, realizei um sonho de infância que foi comprar o famoso PC Gamer.

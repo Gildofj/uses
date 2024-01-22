@@ -1,7 +1,8 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { IoMenu } from "react-icons/io5/index.js";
+import { IoLogoGithub, IoMenu } from "react-icons/io5/index.js";
 import DropdowMenuItem from "./DropdownMenuItem";
+import { PORTFOLIO_URL, REPO_URL } from "../consts";
 
 export default function DropdownMenu() {
   return (
@@ -26,15 +27,25 @@ export default function DropdownMenu() {
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border border-zinc-400 dark:border-zinc-700 bg-purple-50 dark:bg-zinc-800 shadow-xl ring-opacity-5 focus:outline-none divide-zinc-400 dark:divide-zinc-700">
           <div className="py-1">
+            <DropdowMenuItem className="md:hidden" href="/uses/">
+              Home
+            </DropdowMenuItem>
+            <DropdowMenuItem className="md:hidden" href={PORTFOLIO_URL}>
+              Sobre
+            </DropdowMenuItem>
+            <DropdowMenuItem
+              className="inline-flex md:hidden items-center gap-2 w-full"
+              href={REPO_URL}
+            >
+              <IoLogoGithub /> Código
+            </DropdowMenuItem>
             <div className="px-3 py-2 uppercase font-bold text-xs">
               Categories
             </div>
-            <DropdowMenuItem href="/uses/categories/computador">
-              Computador
+            <DropdowMenuItem href="/uses/categories/computacao">
+              Computação
             </DropdowMenuItem>
-            <DropdowMenuItem href="/uses/categories/perifericos">
-              Periféricos
-            </DropdowMenuItem>
+            <DropdowMenuItem href="/uses/categories/desk">Desk</DropdowMenuItem>
           </div>
         </Menu.Items>
       </Transition>

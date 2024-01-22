@@ -3,8 +3,7 @@ title: T-Dagger Destroyer
 description: Teclado mecânico
 pubDate: 2024-01-14T01:21Z
 tags:
-  - Computador
-  - Periféricos
+  - Computação
 heroImage: /uses/assets/t-dagger-destroyer/t-dagger-destroyer.jpeg
 videos:
   - /uses/assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4
