@@ -2,11 +2,20 @@
 import DropdownMenu from "./DropdownMenu";
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
-import { PORTFOLIO_URL, TWITTER_URL, GITHUB_URL, REPO_URL } from "../consts";
+import {
+  PORTFOLIO_URL,
+  TWITTER_URL,
+  GITHUB_URL,
+  REPO_URL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+} from "../consts";
 import {
   IoCodeSlash,
   IoLogoGithub,
   IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoLinkedin,
 } from "react-icons/io5/index.js";
 ---
 
@@ -34,19 +43,35 @@ import {
     <div class="flex items-center gap-3 px-2">
       <a
         class="inline-block text-black dark:text-white no-underline"
-        href={TWITTER_URL}
-        target="_blank"
-      >
-        <span class="sr-only">Follow Me on Twitter</span>
-        <IoLogoTwitter style={{ fontSize: "2rem" }} />
-      </a>
-      <a
-        class="inline-block text-black dark:text-white no-underline"
         href={GITHUB_URL}
         target="_blank"
       >
         <span class="sr-only">Go to my Github</span>
         <IoLogoGithub style={{ fontSize: "2rem" }} />
+      </a>
+      <a
+        class="inline-block text-black dark:text-white no-underline"
+        href={LINKEDIN_URL}
+        target="_blank"
+      >
+        <span class="sr-only">Go to my Linkedin</span>
+        <IoLogoLinkedin style={{ fontSize: "2rem" }} />
+      </a>
+      <a
+        class="hidden md:inline-block text-black dark:text-white no-underline"
+        href={INSTAGRAM_URL}
+        target="_blank"
+      >
+        <span class="sr-only">Follow Me on Instagram</span>
+        <IoLogoInstagram style={{ fontSize: "2rem" }} />
+      </a>
+      <a
+        class="hidden md:inline-block text-black dark:text-white no-underline"
+        href={TWITTER_URL}
+        target="_blank"
+      >
+        <span class="sr-only">Follow Me on Twitter</span>
+        <IoLogoTwitter style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
       <DropdownMenu client:load />

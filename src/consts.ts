@@ -7,3 +7,5 @@ export const REPO_URL = "https://github.com/Gildofj/uses";
 export const PORTFOLIO_URL = "https://gildofj.github.io/portfolio/";
 export const TWITTER_URL = "https://twitter.com/tao_gildao";
 export const GITHUB_URL = "https://github.com/gildofj";
+export const LINKEDIN_URL = "https://linkedin.com/in/gildofj";
+export const INSTAGRAM_URL = "https://instagram.com/tao_gildao";
