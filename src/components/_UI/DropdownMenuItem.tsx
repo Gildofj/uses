@@ -11,7 +11,7 @@ type Props = {
   className?: string;
 };
 
-export default function DropdowMenuItem({
+export default function DropdownMenuItem({
   href,
   children,
   className = "",

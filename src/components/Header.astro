@@ -1,5 +1,5 @@
 ---
-import DropdownMenu from "./DropdownMenu";
+import DropdownMenuNav from "./DropdownMenuNav.tsx";
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
 import {
@@ -74,7 +74,7 @@ import {
         <IoLogoTwitter style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
-      <DropdownMenu client:load />
+      <DropdownMenuNav client:load />
     </div>
   </nav>
 </header>
