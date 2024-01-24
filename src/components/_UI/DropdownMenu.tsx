@@ -1,13 +1,19 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, type ReactNode } from "react";
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
 interface DropdownMenuProps {
   iconButton: ReactNode;
+  className?: string;
   children: ReactNode[];
 }
 
 export default function DropdownMenu({
   iconButton,
+  className,
   children,
 }: DropdownMenuProps) {
   return (
@@ -28,7 +34,12 @@ export default function DropdownMenu({
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border border-zinc-400 dark:border-zinc-700 bg-purple-50 dark:bg-zinc-800 shadow-xl ring-opacity-5 focus:outline-none divide-zinc-400 dark:divide-zinc-700">
+        <Menu.Items
+          className={classNames(
+            "absolute right-0 z-10 mt-2 origin-top-right rounded-md border border-zinc-400 dark:border-zinc-700 bg-purple-50 dark:bg-zinc-800 shadow-xl ring-opacity-5 focus:outline-none divide-zinc-400 dark:divide-zinc-700",
+            className || "",
+          )}
+        >
           <div className="py-1">{children}</div>
         </Menu.Items>
       </Transition>

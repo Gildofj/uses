@@ -5,7 +5,7 @@ import { PORTFOLIO_URL, REPO_URL } from "../consts";
 
 export default function DropdownMenuNav() {
   return (
-    <DropdownMenu iconButton={<IoMenu className="h-5 w-5" />}>
+    <DropdownMenu iconButton={<IoMenu className="h-5 w-5" />} className="w-56">
       <DropdownMenuItem className="md:hidden" href="/uses/">
         Home
       </DropdownMenuItem>
