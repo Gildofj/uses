@@ -18,6 +18,10 @@ import {
   IoLogoInstagram,
   IoLogoLinkedin,
 } from "react-icons/io5/index.js";
+import { getUrlLang, useTranslate } from "../i18n/utils";
+
+const lang = getUrlLang(Astro.url);
+const t = useTranslate(lang);
 ---
 
 <header class="fixed w-full p-2 z-20 backdrop-blur-md font-fira-code">
@@ -25,20 +29,24 @@ import {
     <h2
       class="font-semibold tracking-tighter p-2 font-fira-code text-lg leading-none text-nowrap"
     >
-      <a class="no-underline inline-flex items-center gap-2" href="/uses/">
+      <a
+        class="no-underline inline-flex items-center gap-2"
+        href={`/uses/${lang}`}
+      >
         <IoCodeSlash style={{ fontSize: "1.7rem" }} />
         Gildo Junior
       </a>
     </h2>
     <div class="items-center gap-6 hidden md:flex">
-      <HeaderLink href="/uses/">Home</HeaderLink>
-      <HeaderLink href={PORTFOLIO_URL}>Sobre</HeaderLink>
+      <HeaderLink href={`/uses/${lang}`}>{t("nav.home")}</HeaderLink>
+      <HeaderLink href={PORTFOLIO_URL}>{t("nav.about")}</HeaderLink>
       <HeaderLink
         class="inline-flex items-center gap-2"
         href={REPO_URL}
         target="_blank"
       >
-        <IoLogoGithub /> Código
+        <IoLogoGithub />
+        {t("nav.source")}
       </HeaderLink>
     </div>
     <div class="flex items-center gap-3 px-2">
@@ -76,7 +84,7 @@ import {
       </a>
       <ThemeToggleButton client:load />
       <DropdownMenuNav client:load />
-      <!-- <DropdownMenuLocale client:load /> -->
+      <DropdownMenuLocale client:load client:only />
     </div>
   </nav>
 </header>

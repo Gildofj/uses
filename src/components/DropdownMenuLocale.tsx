@@ -6,23 +6,33 @@ import DropdownMenu from "./_UI/DropdownMenu";
 import DropdownMenuItem from "./_UI/DropdownMenuItem";
 
 enum LOCALE {
-  PT_BR = "pt-BR",
-  EN_US = "en-US",
+  PT = "pt",
+  EN = "en",
 }
 
 export default function DropdownMenuLocale() {
   const [locale, setLocale] = useState<LOCALE>(() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("locale"))
       return localStorage.getItem("locale") as LOCALE;
-    return LOCALE.PT_BR;
+    return LOCALE.PT;
   });
+
+  useEffect(() => {
+    if (!window.location.pathname.includes(locale))
+      window.location.pathname = "/uses/" + locale + "/";
+  }, [locale]);
+
+  const selectLocale = (lang: LOCALE) => {
+    localStorage.setItem("locale", lang);
+    setLocale(lang);
+  };
 
   return (
     <DropdownMenu iconButton={<IoFlag className="w-5 h-5" />} className="w-14">
-      <DropdownMenuItem onClick={() => setLocale(LOCALE.PT_BR)}>
+      <DropdownMenuItem onClick={() => selectLocale(LOCALE.PT)}>
         <Flag country="BR" />
       </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => setLocale(LOCALE.EN_US)}>
+      <DropdownMenuItem onClick={() => selectLocale(LOCALE.EN)}>
         <Flag country="US" />
       </DropdownMenuItem>
     </DropdownMenu>
