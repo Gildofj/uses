@@ -16,6 +16,13 @@ export default defineConfig({
     }),
     tailwind(),
   ],
+  i18n: {
+    defaultLocale: "pt-br",
+    locales: ["en", "pt-br"],
+    fallback: {
+      en: "pt-br",
+    },
+  },
   markdown: {
     extendDefaultPlugins: true,
     rehypePlugins: [

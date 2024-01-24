@@ -8,9 +8,12 @@ export async function GET(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: posts.map(post => ({
-      ...post.data,
-      link: `/uses/posts/${post.slug}/`,
-    })),
+    items: posts.map(post => {
+      const [lang, ...slug] = post.slug.split("/");
+      return {
+        ...post.data,
+        link: `/uses/${lang}/posts/${slug.join("/")}`,
+      };
+    }),
   });
 }
