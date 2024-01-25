@@ -3,6 +3,5 @@ const locale =
   typeof localStorage !== "undefined" && localStorage.getItem("locale")
     ? localStorage.getItem("locale")
     : "pt";
-
-return Astro.redirect(`/uses/${locale}/`);
 ---
+<meta http-equiv="refresh" content='0;url=/${locale}/' />
