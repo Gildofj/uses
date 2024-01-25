@@ -3,12 +3,11 @@ import DropdownMenu from "./_UI/DropdownMenu";
 import DropdownMenuItem from "./_UI/DropdownMenuItem";
 import { PORTFOLIO_URL, REPO_URL } from "../consts";
 import { useTranslate } from "../i18n/utils";
+import Flag from "react-flagkit";
+import { LOCALE, useLocale } from "./hooks/useLocale";
 
-interface DropdownMenuNavProps {
-  locale: "pt" | "en";
-}
-
-export default function DropdownMenuNav({ locale }: DropdownMenuNavProps) {
+export default function DropdownMenuNav() {
+  const { locale, selectLocale } = useLocale();
   const t = useTranslate(locale);
 
   return (
@@ -28,11 +27,26 @@ export default function DropdownMenuNav({ locale }: DropdownMenuNavProps) {
       <div className="px-3 py-2 uppercase font-bold text-xs">
         {t("nav.categories")}
       </div>
-      <DropdownMenuItem href="/uses/categories/computacao">
+      <DropdownMenuItem href={`/uses/${locale}/categories/computacao`}>
         {t("nav.computing")}
       </DropdownMenuItem>
-      <DropdownMenuItem href="/uses/categories/desk">
+      <DropdownMenuItem href={`/uses/${locale}/categories/desk`}>
         {t("nav.desk")}
+      </DropdownMenuItem>
+      <div className="px-3 py-2 uppercase font-bold text-xs">
+        {t("nav.locales")}
+      </div>
+      <DropdownMenuItem
+        onClick={() => selectLocale(LOCALE.PT)}
+        className="flex items-center gap-2"
+      >
+        <Flag country="BR" /> Português Brasil
+      </DropdownMenuItem>
+      <DropdownMenuItem
+        onClick={() => selectLocale(LOCALE.EN)}
+        className="flex items-center gap-2"
+      >
+        <Flag country="US" /> English USA
       </DropdownMenuItem>
     </DropdownMenu>
   );

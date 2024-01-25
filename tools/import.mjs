@@ -91,7 +91,7 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
     if (fs.existsSync(sourcePath)) {
       verifyFileTypeAndCopy(sourcePath, targetPath);
     } else {
-      // Handle file deletion here if needed
+      // fs.remo
       console.log(`File deleted: ${targetPath}`);
     }
   });
