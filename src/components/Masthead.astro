@@ -1,3 +1,10 @@
+---
+import { getUrlLocale, useTranslate } from "../i18n/utils";
+
+const locale = getUrlLocale(Astro.url);
+const t = useTranslate(locale);
+---
+
 <section class="relative mb-6 h-80 flex justify-center items-center">
   <div class="absolute w-full h-full overflow-hidden">
     <video
@@ -19,10 +26,11 @@
     </video>
   </div>
   <div class="z-10 text-center px-8 drop-shadow-lg shadow-black">
-    <div class="uppercase text-sm mb-4">Bem vindo a</div>
+    <div class="uppercase text-sm mb-4">{t("masthead.welcome")}</div>
     <div class="text-4xl font-fira-code font-medium">
-      Lista de hardware e perifericos que
-      <span class="text-purple-500">utilizo</span>
+      {t("masthead.welcomeTitle")}
+      <span class="text-purple-500">{t("masthead.welcomeTitle.highlight")}</span
+      >
     </div>
   </div>
 </section>

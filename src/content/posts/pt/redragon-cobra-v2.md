@@ -1,5 +1,5 @@
 ---
-title: Redragon Cobra v2
+title: Redragon Cobra V2
 description: Mouse gamer
 pubDate: 2024-01-21T18:38Z
 tags:

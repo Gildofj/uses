@@ -18,13 +18,18 @@ export default function DropdownMenuLocale() {
   });
 
   useEffect(() => {
-    if (!window.location.pathname.includes(locale))
-      window.location.pathname = "/uses/" + locale + "/";
+    if (!window.location.pathname.includes(locale)) {
+      const slug = window.location.pathname;
+      if (slug.split(LOCALE.PT).length > 1)
+        window.location.pathname = "/uses/" + locale + slug.split(LOCALE.PT)[1];
+      if (slug.split(LOCALE.EN).length > 1)
+        window.location.pathname = "/uses/" + locale + slug.split(LOCALE.EN)[1];
+    }
   }, [locale]);
 
-  const selectLocale = (lang: LOCALE) => {
-    localStorage.setItem("locale", lang);
-    setLocale(lang);
+  const selectLocale = (locale: LOCALE) => {
+    localStorage.setItem("locale", locale);
+    setLocale(locale);
   };
 
   return (

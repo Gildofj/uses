@@ -1,30 +1,39 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getUrlLocale } from "../i18n/utils";
 
 export interface Props {
   category?: string;
 }
 
 const { category } = Astro.props;
+const currentLocale = getUrlLocale(Astro.url);
 
 const posts = (await getCollection("posts"))
-  .filter(p =>
-    category
-      ? p.data.tags?.map(t => t.toLowerCase()).includes(category.toLowerCase())
-      : true,
-  )
+  .filter(p => {
+    const [locale, ...slug] = p.slug.split("/");
+
+    return (
+      locale === currentLocale &&
+      (category
+        ? p.data.tags
+            ?.map(t => t.toLowerCase())
+            .includes(category.toLowerCase())
+        : true)
+    );
+  })
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
   {
     posts.map(post => {
-      const [lang, ...slug] = post.slug.split("/");
+      const [locale, ...slug] = post.slug.split("/");
 
       return (
         <li class="text-center mb-4">
-          <a href={`/uses/${lang}/posts/${slug.join("/")}`}>
+          <a href={`/uses/${locale}/posts/${slug.join("/")}`}>
             <Image
               class="border border-slate-300 dark:border-zinc-700 rounded-xl"
               src={post.data.heroImage || "/uses/cover.jpeg"}

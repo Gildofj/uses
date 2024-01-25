@@ -1,12 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import { getUrlLocale, useTranslate } from "../i18n/utils";
+
+const locale = getUrlLocale(Astro.url);
+const t = useTranslate(locale);
 ---
 
 <section>
   <h2
     class="font-fira-code font-bold text-xl my-4 underline underline-offset-4 decoration-zinc-400 dark:decoration-zinc-700 decoration-4"
   >
-    Criado com
+    {t("createdWith.title")}
   </h2>
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <li class="text-center mb-4">
@@ -19,7 +23,7 @@ import { Image } from "astro:assets";
           alt="Obsidian banner"
         />
         <div class="mt-3 text-xl">Obsidian</div>
-        <div class="opacity-70">Aplicativo de anotações em markdown</div>
+        <div class="opacity-70">{t("createdWith.obsidianDescription")}</div>
       </a>
     </li>
     <li class="text-center mb-4">
@@ -32,9 +36,7 @@ import { Image } from "astro:assets";
           alt="Obsidian banner"
         />
         <div class="mt-3 text-xl">Astro</div>
-        <div class="opacity-70">
-          Framework para fazer sites estáticos rapidamente
-        </div>
+        <div class="opacity-70">{t("createdWith.astroDescription")}</div>
       </a>
     </li>
   </ul>

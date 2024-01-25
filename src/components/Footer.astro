@@ -1,9 +1,14 @@
 ---
 import { PORTFOLIO_URL } from "../consts";
+import { getUrlLocale, useTranslate } from "../i18n/utils";
 const today = new Date();
+
+const locale = getUrlLocale(Astro.url);
+const t = useTranslate(locale);
 ---
 
 <footer class="text-center p-4 text-zinc-500">
   &copy; {today.getFullYear()}
-  <a href={PORTFOLIO_URL}>Gildo Junior.</a> Todos os direitos reservados.
+  <a href={PORTFOLIO_URL}>Gildo Junior.</a>
+  {t("footer.copyright")}
 </footer>

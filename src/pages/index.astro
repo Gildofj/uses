@@ -1,8 +1,8 @@
 ---
-const lang =
+const locale =
   typeof localStorage !== "undefined" && localStorage.getItem("locale")
     ? localStorage.getItem("locale")
     : "pt";
 
-return Astro.redirect(`/uses/${lang}/`);
+return Astro.redirect(`/uses/${locale}/`);
 ---

@@ -1,13 +1,13 @@
 import { ui, defaultLocale } from "./ui";
 
-export function getUrlLang(url: URL) {
-  const [, lang] = url.pathname.split("/");
-  if (lang in ui) return lang as keyof typeof ui;
+export function getUrlLocale(url: URL) {
+  const [, , locale] = url.pathname.split("/");
+  if (locale in ui) return locale as keyof typeof ui;
   return defaultLocale;
 }
 
-export function useTranslate(lang: keyof typeof ui) {
+export function useTranslate(locale: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLocale]) {
-    return ui[lang][key] || ui[defaultLocale][key];
+    return ui[locale][key] || ui[defaultLocale][key];
   };
 }

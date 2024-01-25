@@ -18,10 +18,10 @@ import {
   IoLogoInstagram,
   IoLogoLinkedin,
 } from "react-icons/io5/index.js";
-import { getUrlLang, useTranslate } from "../i18n/utils";
+import { getUrlLocale, useTranslate } from "../i18n/utils";
 
-const lang = getUrlLang(Astro.url);
-const t = useTranslate(lang);
+const locale = getUrlLocale(Astro.url);
+const t = useTranslate(locale);
 ---
 
 <header class="fixed w-full p-2 z-20 backdrop-blur-md font-fira-code">
@@ -31,14 +31,14 @@ const t = useTranslate(lang);
     >
       <a
         class="no-underline inline-flex items-center gap-2"
-        href={`/uses/${lang}`}
+        href={`/uses/${locale}`}
       >
         <IoCodeSlash style={{ fontSize: "1.7rem" }} />
         Gildo Junior
       </a>
     </h2>
     <div class="items-center gap-6 hidden md:flex">
-      <HeaderLink href={`/uses/${lang}`}>{t("nav.home")}</HeaderLink>
+      <HeaderLink href={`/uses/${locale}`}>{t("nav.home")}</HeaderLink>
       <HeaderLink href={PORTFOLIO_URL}>{t("nav.about")}</HeaderLink>
       <HeaderLink
         class="inline-flex items-center gap-2"
@@ -83,8 +83,8 @@ const t = useTranslate(lang);
         <IoLogoTwitter style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
-      <DropdownMenuNav client:load />
       <DropdownMenuLocale client:load client:only />
+      <DropdownMenuNav client:load locale={locale} />
     </div>
   </nav>
 </header>

@@ -1,9 +1,12 @@
 ---
 import { IoChevronForward } from "react-icons/io5/index.js";
+import { getUrlLocale } from "../i18n/utils";
+
+const locale = getUrlLocale(Astro.url);
 ---
 
 <div class="my-4 flex items-center gap-1">
-  <a href="/uses/" class="undeline underline-offset-2">Index</a>
+  <a href=`/uses/${locale}` class="undeline underline-offset-2">Home</a>
   <IoChevronForward className="opacity-50" />
   <span class="text-purple-500 font-fira-code font-bold"><slot /></span>
 </div>
