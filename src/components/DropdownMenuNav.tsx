@@ -33,7 +33,7 @@ export default function DropdownMenuNav() {
       <DropdownMenuItem href={`/uses/${locale}/categories/desk`}>
         {t("nav.desk")}
       </DropdownMenuItem>
-      <div className="px-3 py-2 uppercase font-bold text-xs">
+      <div className="px-3 py-2 uppercase font-bold text-xs lg:hidden">
         {t("nav.locales")}
       </div>
       <DropdownMenuItem
