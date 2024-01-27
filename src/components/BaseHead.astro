@@ -42,14 +42,28 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
-<link rel="apple-touch-icon" type="image/x-icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#492b7d" />
+<link rel="shortcut icon" type="image/x-icon" href="/uses/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/uses/favicon.ico" />
+<link rel="apple-touch-icon" type="image/x-icon" href="/uses/favicon.ico" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/uses/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/uses/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/uses/favicon-16x16.png"
+/>
+<link rel="manifest" href="/uses/site.webmanifest" />
+<link rel="mask-icon" href="/uses/safari-pinned-tab.svg" color="#492b7d" />
 <meta name="msapplication-TileColor" content="#a855f7" />
 <meta name="theme-color" content="#a855f7" />
 
