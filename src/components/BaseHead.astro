@@ -17,8 +17,6 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/uses/favicon.svg" />
-<link rel="apple-touch-icon" type="image/svg+xml" href="/uses/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
@@ -68,15 +66,16 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 />
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"></script>
-<script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"
+></script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){
+  function gtag() {
     dataLayer.push(arguments);
   }
-  gtag('js', new Date());
+  gtag("js", new Date());
 
-  gtag('config', 'G-QZ6F1ZHLVK');
+  gtag("config", "G-QZ6F1ZHLVK");
 </script>
 
 <script is:inline>
