@@ -7,8 +7,14 @@ export enum LOCALE {
 
 export function useLocale() {
   const [locale, setLocale] = useState<LOCALE>(() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("locale"))
-      return localStorage.getItem("locale") as LOCALE;
+    if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {
+      const currentLocale = localStorage.getItem("locale");
+      if (currentLocale === LOCALE.PT || currentLocale === LOCALE.EN)
+        return currentLocale as LOCALE;
+
+      if (currentLocale === "pt-BR") return LOCALE.PT;
+      if (currentLocale === "en-US") return LOCALE.EN;
+    }
     return LOCALE.PT;
   });
 
