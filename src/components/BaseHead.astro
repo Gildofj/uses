@@ -43,11 +43,41 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#492b7d" />
+<meta name="msapplication-TileColor" content="#a855f7" />
+<meta name="theme-color" content="#a855f7" />
+
 <!-- Permission-Policy -->
 <meta
   http-equiv="Permissions-Policy"
   content="interest-cohort=(), user-id=()"
 />
+
+<!-- Google -->
+<meta
+  name="google-site-verification"
+  content="AzjfR1JEdo5QFJAHE9ggfNeBrRAASpeT2drc49Rbgt8"
+/>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZ6F1ZHLVK');
+</script>
 
 <script is:inline>
   const theme = (() => {
