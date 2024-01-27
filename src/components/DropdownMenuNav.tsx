@@ -12,10 +12,10 @@ export default function DropdownMenuNav() {
 
   return (
     <DropdownMenu iconButton={<IoMenu className="h-5 w-5" />} className="w-56">
-      <DropdownMenuItem className="md:hidden" href={`/uses/${locale}`}>
+      <DropdownMenuItem className="lg:hidden" href={`/uses/${locale}`}>
         {t("nav.home")}
       </DropdownMenuItem>
-      <DropdownMenuItem className="md:hidden" href={PORTFOLIO_URL}>
+      <DropdownMenuItem className="lg:hidden" href={PORTFOLIO_URL}>
         {t("nav.about")}
       </DropdownMenuItem>
       <DropdownMenuItem
@@ -38,13 +38,13 @@ export default function DropdownMenuNav() {
       </div>
       <DropdownMenuItem
         onClick={() => selectLocale(LOCALE.PT)}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 lg:hidden"
       >
         <Flag country="BR" /> Português Brasil
       </DropdownMenuItem>
       <DropdownMenuItem
         onClick={() => selectLocale(LOCALE.EN)}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 lg:hidden"
       >
         <Flag country="US" /> English USA
       </DropdownMenuItem>

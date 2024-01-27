@@ -25,7 +25,7 @@ const t = useTranslate(locale);
 ---
 
 <header class="fixed w-full p-2 z-20 backdrop-blur-md font-fira-code">
-  <nav class="flex items-center justify-between">
+  <nav class="flex items-center justify-between relative">
     <h2
       class="font-semibold tracking-tighter py-2 px-1 md:px-2 font-fira-code text-lg leading-none text-nowrap"
     >
@@ -37,7 +37,9 @@ const t = useTranslate(locale);
         Gildo Junior
       </a>
     </h2>
-    <div class="items-center gap-6 hidden md:flex">
+    <div
+      class="items-center gap-6 hidden lg:flex absolute left-[38%] xl:left-[40%] 2xl:left-[42%]"
+    >
       <HeaderLink href={`/uses/${locale}`}>{t("nav.home")}</HeaderLink>
       <HeaderLink href={PORTFOLIO_URL}>{t("nav.about")}</HeaderLink>
       <HeaderLink
@@ -83,7 +85,7 @@ const t = useTranslate(locale);
         <IoLogoTwitter style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
-      <div class="hidden md:block">
+      <div class="hidden lg:block">
         <DropdownMenuLocale client:load client:only />
       </div>
       <DropdownMenuNav client:load client:only />
