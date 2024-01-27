@@ -9,6 +9,7 @@ export function useLocale() {
   const [locale, setLocale] = useState<LOCALE>(() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {
       const currentLocale = localStorage.getItem("locale");
+
       if (currentLocale === LOCALE.PT || currentLocale === LOCALE.EN)
         return currentLocale as LOCALE;
 
