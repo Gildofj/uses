@@ -15,11 +15,11 @@ export function getStaticPaths() {
 
   return categories.map(({ id, name }) => ({
     params: { id },
-    props: { name },
+    props: { category: { id, name } },
   }));
 }
 
-const { name } = Astro.props;
+const { category } = Astro.props;
 ---
 
-<CategoryPosts category={name} />
+<CategoryPosts category={category} />

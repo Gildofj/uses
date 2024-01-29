@@ -8,9 +8,10 @@ import Content from "../components/Content.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import Footer from "../components/Footer.astro";
 import PostsList from "../components/PostsList.astro";
+import type { Category } from "../@types/Category";
 
 export interface Props {
-  category: string;
+  category: Category;
 }
 
 const { category } = Astro.props;
@@ -26,7 +27,7 @@ const { category } = Astro.props;
     <main class="pt-[76px]">
       <Masthead />
       <Content>
-        <Breadcrumb>{category}</Breadcrumb>
+        <Breadcrumb>{category.name}</Breadcrumb>
         <section>
           <PostsList category={category} />
         </section>
