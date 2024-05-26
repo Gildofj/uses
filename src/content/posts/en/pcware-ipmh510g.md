@@ -14,5 +14,6 @@ Certainly, not everything is perfect. Despite these advantages, there's the down
 
 If you're curious, I can provide the specifications of my PC below:
 
-![Especificaçoes PC](/uses/assets/pcware-ipmh510g/especificaçoes-pc.jpeg)
+![Especificaçoes PC](/uses/assets/pcware-ipmh510g/especificaçoes-pc.png)
+
 

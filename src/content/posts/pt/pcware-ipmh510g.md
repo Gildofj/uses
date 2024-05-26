@@ -14,5 +14,4 @@ Com certeza nem tudo são flores, apesar dessas vantagens vem o ônus de perder 
 
 Caso estejam curiosos informarei especificações de meu PC a seguir:
 
-![Especificaçoes PC](/uses/assets/pcware-ipmh510g/especificaçoes-pc.jpeg)
-
+![Especificaçoes PC](/uses/assets/pcware-ipmh510g/especificaçoes-pc.png)
