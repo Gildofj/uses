@@ -12,12 +12,12 @@ import {
   LINKEDIN_URL,
 } from "../consts";
 import {
-  IoCodeSlash,
-  IoLogoGithub,
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-} from "react-icons/io5/index.js";
+  Code,
+  GithubLogo,
+  XLogo,
+  InstagramLogo,
+  LinkedinLogo,
+} from "@phosphor-icons/react";
 import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
@@ -33,7 +33,7 @@ const t = useTranslate(locale);
         class="no-underline inline-flex items-center gap-1 md:gap-2"
         href={`/uses/${locale}`}
       >
-        <IoCodeSlash style={{ fontSize: "1.7rem" }} />
+        <Code style={{ fontSize: "1.7rem" }} />
         Gildo Junior
       </a>
     </h2>
@@ -47,7 +47,7 @@ const t = useTranslate(locale);
         href={REPO_URL}
         target="_blank"
       >
-        <IoLogoGithub />
+        <GithubLogo />
         {t("nav.source")}
       </HeaderLink>
     </div>
@@ -58,7 +58,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Go to my Github</span>
-        <IoLogoGithub style={{ fontSize: "2rem" }} />
+        <GithubLogo style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="inline-block text-black dark:text-white no-underline"
@@ -66,7 +66,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Go to my Linkedin</span>
-        <IoLogoLinkedin style={{ fontSize: "2rem" }} />
+        <LinkedinLogo style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="hidden md:inline-block text-black dark:text-white no-underline"
@@ -74,7 +74,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Follow Me on Instagram</span>
-        <IoLogoInstagram style={{ fontSize: "2rem" }} />
+        <InstagramLogo style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="hidden md:inline-block text-black dark:text-white no-underline"
@@ -82,7 +82,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Follow Me on Twitter</span>
-        <IoLogoTwitter style={{ fontSize: "2rem" }} />
+        <XLogo style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
       <div class="hidden lg:block">

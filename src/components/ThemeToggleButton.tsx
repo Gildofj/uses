@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IoSunny, IoMoon } from "react-icons/io5/index.js";
+import { Sun, Moon } from "@phosphor-icons/react";
 
 const themes = ["light", "dark"];
 
@@ -44,7 +44,7 @@ export default function ThemeToggleButton() {
             } cursor-pointer rounded-3xl p-2`}
             onClick={toggleTheme}
           >
-            {t === "light" ? <IoSunny /> : <IoMoon />}
+            {t === "light" ? <Sun /> : <Moon />}
           </button>
         );
       })}
