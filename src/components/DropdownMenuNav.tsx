@@ -1,4 +1,4 @@
-import { GithubLogo, List } from "@phosphor-icons/react";
+import { GithubLogoIcon, ListIcon } from "@phosphor-icons/react";
 import DropdownMenu from "./_UI/DropdownMenu";
 import DropdownMenuItem from "./_UI/DropdownMenuItem";
 import { PORTFOLIO_URL, REPO_URL } from "../consts";
@@ -11,7 +11,10 @@ export default function DropdownMenuNav() {
   const t = useTranslate(locale);
 
   return (
-    <DropdownMenu iconButton={<List className="h-5 w-5" />} className="w-56">
+    <DropdownMenu
+      iconButton={<ListIcon className="h-5 w-5" />}
+      className="w-56"
+    >
       <DropdownMenuItem className="lg:hidden" href={`/uses/${locale}`}>
         {t("nav.home")}
       </DropdownMenuItem>
@@ -22,7 +25,7 @@ export default function DropdownMenuNav() {
         className="inline-flex md:hidden items-center gap-2 w-full"
         href={REPO_URL}
       >
-        <GithubLogo /> {t("nav.source")}
+        <GithubLogoIcon /> {t("nav.source")}
       </DropdownMenuItem>
       <div className="px-3 py-2 uppercase font-bold text-xs">
         {t("nav.categories")}

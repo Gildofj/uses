@@ -1,12 +1,12 @@
 import Flag from "react-flagkit";
-import { Flag as FlagIcon } from "@phosphor-icons/react";
+import { FlagIcon } from "@phosphor-icons/react";
 
 import DropdownMenu from "./_UI/DropdownMenu";
 import DropdownMenuItem from "./_UI/DropdownMenuItem";
 import { LOCALE, useLocale } from "./hooks/useLocale";
 
 export default function DropdownMenuLocale() {
-  const { selectLocale } = useLocale();
+  const { locale, selectLocale } = useLocale();
   return (
     <DropdownMenu
       iconButton={<FlagIcon className="w-5 h-5" />}

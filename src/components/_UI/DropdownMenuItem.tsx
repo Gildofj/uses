@@ -1,4 +1,4 @@
-import { Menu } from "@headlessui/react";
+import { MenuItem } from "@headlessui/react";
 import type { ReactNode } from "react";
 
 function classNames(...classes: string[]) {
@@ -19,35 +19,29 @@ export default function DropdownMenuItem({
   className = "",
 }: Props) {
   return (
-    <Menu.Item>
-      {({ active }) => (
-        <>
-          {onClick && (
-            <button
-              onClick={onClick}
-              className={classNames(
-                active ? "bg-purple-200 dark:bg-zinc-700" : "",
-                "block px-4 py-2 text-sm",
-                className,
-              )}
-            >
-              {children}
-            </button>
-          )}
-          {href && (
-            <a
-              href={href}
-              className={classNames(
-                active ? "bg-purple-200 dark:bg-zinc-700" : "",
-                "block px-4 py-2 text-sm",
-                className,
-              )}
-            >
-              {children}
-            </a>
-          )}
-        </>
+    <MenuItem
+      {...(href && { href })}
+      {...(onClick && { onClick })}
+      className={classNames(
+        "block px-4 py-2 text-sm w-full text-left cursor-pointer",
+        className,
       )}
-    </Menu.Item>
+    >
+      {({ focus, ...passthroughProps }) => {
+        const Element = href ? "a" : "button";
+
+        return (
+          <Element
+            {...passthroughProps}
+            className={classNames(
+              focus ? "bg-purple-200 dark:bg-zinc-700" : "",
+              className,
+            )}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </MenuItem>
   );
 }
