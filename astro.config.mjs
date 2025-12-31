@@ -11,7 +11,15 @@ export default defineConfig({
   output: "static",
 
   integrations: [
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: "pt-br",
+        locales: {
+          en: "en",
+          "pt-br": "pt-BR",
+        },
+      },
+    }),
     react({
       experimentalReactChildren: true,
     }),
