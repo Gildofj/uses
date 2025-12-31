@@ -6,7 +6,7 @@ import DropdownMenuItem from "./_UI/DropdownMenuItem";
 import { LOCALE, useLocale } from "./hooks/useLocale";
 
 export default function DropdownMenuLocale() {
-  const { locale, selectLocale } = useLocale();
+  const { selectLocale } = useLocale();
   return (
     <DropdownMenu
       iconButton={<FlagIcon className="w-5 h-5" />}
