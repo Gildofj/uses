@@ -22,7 +22,7 @@
     "@phosphor-icons/react": "^2.1.5",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
-    "astro": "^4.1.1",
+    "astro": "^5.16.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-flagkit": "^2.0.4",

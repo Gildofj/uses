@@ -5,7 +5,7 @@ import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
 import {
   PORTFOLIO_URL,
-  TWITTER_URL,
+  X_URL,
   GITHUB_URL,
   REPO_URL,
   INSTAGRAM_URL,
@@ -34,7 +34,7 @@ const t = useTranslate(locale);
         href={`/uses/${locale}`}
       >
         <Code style={{ fontSize: "1.7rem" }} />
-        Gildo Junior
+        <div>gildofj<span class="text-purple-500">.dev</span></div>
       </a>
     </h2>
     <div
@@ -78,10 +78,10 @@ const t = useTranslate(locale);
       </a>
       <a
         class="hidden md:inline-block text-black dark:text-white no-underline"
-        href={TWITTER_URL}
+        href={X_URL}
         target="_blank"
       >
-        <span class="sr-only">Follow Me on Twitter</span>
+        <span class="sr-only">Follow Me on X</span>
         <XLogo style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
