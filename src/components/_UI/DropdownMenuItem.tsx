@@ -20,6 +20,7 @@ export default function DropdownMenuItem({
 }: Props) {
   return (
     <MenuItem
+      as="div"
       {...(href && { href })}
       {...(onClick && { onClick })}
       className={classNames(

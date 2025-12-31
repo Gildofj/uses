@@ -14,13 +14,13 @@ const currentLocale = getUrlLocale(Astro.url);
 
 const posts = (await getCollection("posts"))
   .filter(p => {
-    const [locale, ...slug] = p.slug.split("/");
+    const [locale] = p.slug.split("/");
 
     return (
       locale === currentLocale &&
       (category
         ? p.data.tags
-            ?.map(t => removerAccents(t).toLowerCase())
+            ?.map((t: string) => removerAccents(t).toLowerCase())
             .includes(category.id.toLowerCase())
         : true)
     );

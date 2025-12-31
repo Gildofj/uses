@@ -12,11 +12,11 @@ import {
   LINKEDIN_URL,
 } from "../consts";
 import {
-  Code,
-  GithubLogo,
-  XLogo,
-  InstagramLogo,
-  LinkedinLogo,
+  CodeIcon,
+  GithubLogoIcon,
+  XLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
 } from "@phosphor-icons/react";
 import { getUrlLocale, useTranslate } from "../i18n/utils";
 
@@ -33,7 +33,7 @@ const t = useTranslate(locale);
         class="no-underline inline-flex items-center gap-1 md:gap-2"
         href={`/uses/${locale}`}
       >
-        <Code style={{ fontSize: "1.7rem" }} />
+        <CodeIcon style={{ fontSize: "1.7rem" }} />
         <div>gildofj<span class="text-purple-500">.dev</span></div>
       </a>
     </h2>
@@ -47,7 +47,7 @@ const t = useTranslate(locale);
         href={REPO_URL}
         target="_blank"
       >
-        <GithubLogo />
+        <GithubLogoIcon />
         {t("nav.source")}
       </HeaderLink>
     </div>
@@ -58,7 +58,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Go to my Github</span>
-        <GithubLogo style={{ fontSize: "2rem" }} />
+        <GithubLogoIcon style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="inline-block text-black dark:text-white no-underline"
@@ -66,7 +66,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Go to my Linkedin</span>
-        <LinkedinLogo style={{ fontSize: "2rem" }} />
+        <LinkedinLogoIcon style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="hidden md:inline-block text-black dark:text-white no-underline"
@@ -74,7 +74,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Follow Me on Instagram</span>
-        <InstagramLogo style={{ fontSize: "2rem" }} />
+        <InstagramLogoIcon style={{ fontSize: "2rem" }} />
       </a>
       <a
         class="hidden md:inline-block text-black dark:text-white no-underline"
@@ -82,7 +82,7 @@ const t = useTranslate(locale);
         target="_blank"
       >
         <span class="sr-only">Follow Me on X</span>
-        <XLogo style={{ fontSize: "2rem" }} />
+        <XLogoIcon style={{ fontSize: "2rem" }} />
       </a>
       <ThemeToggleButton client:load />
       <div class="hidden lg:block">
