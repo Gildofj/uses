@@ -3,10 +3,11 @@ import { CaretRightIcon } from "@phosphor-icons/react";
 import { getUrlLocale } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="my-4 flex items-center gap-1">
-  <a href=`/uses/${locale}` class="undeline underline-offset-2">Home</a>
+  <a href=`${base}${locale}` class="undeline underline-offset-2">Home</a>
   <CaretRightIcon className="opacity-50" />
   <span class="text-purple-500 font-fira-code font-bold"><slot /></span>
 </div>

@@ -10,10 +10,12 @@ import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 type Props = CollectionEntry<"posts">["data"];
 
+const base = import.meta.env.BASE_URL;
+
 const {
   title,
   description,
-  heroImage = "/uses/masthead-poster.png",
+  heroImage = `${base}masthead-poster.png`,
   videos,
 } = Astro.props;
 

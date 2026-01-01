@@ -3,13 +3,14 @@ import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
 const t = useTranslate(locale);
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="relative mb-6 h-80 flex justify-center items-center">
   <div class="absolute w-full h-full overflow-hidden">
     <video
       class="absolute h-auto left-1/2 top-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 opacity-30"
-      poster="/uses/masthead-poster.png"
+      poster={`${base}masthead-poster.png`}
       autoplay="autoplay"
       muted="muted"
       loop="loop"

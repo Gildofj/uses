@@ -4,6 +4,7 @@ import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
 const t = useTranslate(locale);
+const base = import.meta.env.BASE_URL;
 ---
 
 <section>
@@ -17,7 +18,7 @@ const t = useTranslate(locale);
       <a href="https://obsidian.md/" target="_blank">
         <Image
           class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-          src="/uses/obsidian-banner.png"
+          src={`${base}obsidian-banner.png`}
           width={720 * 2}
           height={500 * 2}
           alt="Obsidian banner"
@@ -30,10 +31,10 @@ const t = useTranslate(locale);
       <a href="https://astro.build/" target="_blank">
         <Image
           class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-          src="/uses/astro-banner.png"
+          src={`${base}astro-banner.png`}
           width={720 * 2}
           height={500 * 2}
-          alt="Obsidian banner"
+          alt="Astro banner"
         />
         <div class="mt-3 text-xl">Astro</div>
         <div class="opacity-70">{t("createdWith.astroDescription")}</div>

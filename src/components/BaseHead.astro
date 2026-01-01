@@ -11,7 +11,9 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const { title, description, image = `${base}cover.jpeg` } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -42,30 +44,97 @@ const { title, description, image = "/uses/cover.jpeg" } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Favicon -->
-<link rel="shortcut icon" type="image/x-icon" href="/uses/favicon.ico" />
-<link rel="icon" type="image/x-icon" href="/uses/favicon.ico" />
-<link rel="apple-touch-icon" type="image/x-icon" href="/uses/favicon.ico" />
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="/uses/apple-touch-icon.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/uses/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/uses/favicon-16x16.png"
-/>
-<link rel="manifest" href="/uses/site.webmanifest" />
-<link rel="mask-icon" href="/uses/safari-pinned-tab.svg" color="#492b7d" />
-<meta name="msapplication-TileColor" content="#a855f7" />
+<meta name="application-name" content="gildofj.dev uses" />
 <meta name="theme-color" content="#a855f7" />
+<meta name="msapplication-TileColor" content="#a855f7" />
+<meta name="msapplication-TileImage" content={`${base}ms-icon-144x144.png`} />
+<meta
+  name="msapplication-square70x70logo"
+  content={`${base}mstile-70x70.png`}
+/>
+<meta
+  name="msapplication-square150x150logo"
+  content={`${base}mstile-150x150.png`}
+/>
+<meta
+  name="msapplication-wide310x150logo"
+  content={`${base}mstile-310x150.png`}
+/>
+<meta
+  name="msapplication-square310x310logo"
+  content={`${base}mstile-310x310.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="57x57"
+  href={`${base}apple-touch-icon-57x57.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="60x60"
+  href={`${base}apple-touch-icon-60x60.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="72x72"
+  href={`${base}apple-touch-icon-72x72.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="76x76"
+  href={`${base}apple-touch-icon-76x76.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="114x114"
+  href={`${base}apple-touch-icon-114x114.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="120x120"
+  href={`${base}apple-touch-icon-120x120.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href={`${base}apple-touch-icon-144x144.png`}
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href={`${base}apple-touch-icon-152x152.png`}
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href={`${base}favicon-196x196.png`}
+  sizes="196x196"
+/>
+<link rel="manifest" href="/site.webmanifest" />
+<link
+  rel="icon"
+  type="image/png"
+  href={`${base}favicon-96x96.png`}
+  sizes="96x96"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href={`${base}favicon-32x32.png`}
+  sizes="32x32"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href={`${base}favicon-16x16.png`}
+  sizes="16x16"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href={`${base}favicon-128.png`}
+  sizes="128x128"
+/>
 
 <!-- Permission-Policy -->
 <meta
