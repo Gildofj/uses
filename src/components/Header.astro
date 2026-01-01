@@ -24,10 +24,10 @@ const locale = getUrlLocale(Astro.url);
 const t = useTranslate(locale);
 ---
 
-<header class="fixed w-full p-2 z-20 backdrop-blur-md font-fira-code top-0">
-  <nav class="flex items-center justify-between relative">
+<header class="fixed w-full p-2 z-20 backdrop-blur-md font-mono top-0">
+  <nav class="flex items-center justify-between relative min-h-[60px]">
     <h2
-      class="font-semibold tracking-tighter py-2 px-1 md:px-2 font-fira-code text-lg leading-none text-nowrap whitespace-nowrap"
+      class="font-semibold tracking-tighter py-2 px-1 md:px-2 font-mono text-lg leading-none text-nowrap whitespace-nowrap"
     >
       <a
         class="no-underline inline-flex items-center gap-1 md:gap-2"
