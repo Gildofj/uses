@@ -1,5 +1,5 @@
 import { MenuItem } from "@headlessui/react";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -19,28 +19,27 @@ export default function DropdownMenuItem({
   className = "",
 }: Props) {
   return (
-    <MenuItem
-      as="div"
-      {...(href && { href })}
-      {...(onClick && { onClick })}
-      className={classNames(
-        "block px-4 py-2 text-sm w-full text-left cursor-pointer",
-        className,
-      )}
-    >
+    <MenuItem as={Fragment}>
       {({ focus, ...passthroughProps }) => {
         const Element = href ? "a" : "button";
 
         return (
-          <Element
-            {...passthroughProps}
+          <div
             className={classNames(
               focus ? "bg-purple-200 dark:bg-zinc-700" : "",
+              "block px-4 py-2 text-sm w-full text-left cursor-pointer",
               className,
             )}
           >
-            {children}
-          </Element>
+            <Element
+              {...(href && { href })}
+              {...(onClick && { onClick })}
+              {...passthroughProps}
+              className="cursor-pointer"
+            >
+              {children}
+            </Element>
+          </div>
         );
       }}
     </MenuItem>
