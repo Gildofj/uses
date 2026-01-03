@@ -4,6 +4,7 @@ description: Teclado mecânico
 pubDate: 2024-01-14T01:21Z
 tags:
   - Computação
+  - Deprecated
 heroImage: /uses/assets/t-dagger-destroyer/t-dagger-destroyer.jpeg
 videos:
   - /uses/assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4

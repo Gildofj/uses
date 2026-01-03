@@ -4,6 +4,7 @@ description: Laptop computer
 pubDate: 2024-01-22T19:45Z
 tags:
   - Computação
+  - Deprecated
 heroImage: /uses/assets/dell-latitude-3420/dell-latitude-3420.jpeg
 ---
 This laptop is not actually mine; it's the computer provided by my company for day-to-day tasks. However, I use it only when I need to work outside of my home, considering that my personal laptop has a better configuration, making my everyday work more productive. Nevertheless, this doesn't make this equipment inadequate. Currently, I've been primarily working with mobile development, specifically native Android. Therefore, I use Android Studio daily, which requires a more powerful computer than the usual, as any configuration must be capable of handling development and testing processes smoothly without performance issues or bottlenecks.

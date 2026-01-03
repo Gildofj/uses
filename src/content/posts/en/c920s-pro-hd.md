@@ -4,6 +4,7 @@ description: Webcam
 pubDate: 2024-01-22T04:03Z
 tags:
   - Desk
+  - InUse
 heroImage: /uses/assets/c920s-pro-hd/c920s-pro-hd.jpeg
 ---
 Opting for a desktop computer instead of a laptop, I encountered the absence of a built-in webcam. Accustomed to having all the necessary features in my old laptop, I only then realized the importance of this component.

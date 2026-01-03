@@ -1,13 +1,29 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import os from "node:os";
 
 const __filename = fileURLToPath(import.meta.url.replace("/tools", ""));
 const __dirname = path.dirname(__filename);
-const home = "/mnt/c/Users/junio/";
+const home = os.homedir();
 
-const postsDir = path.join(home, "obsidian-vault/Uses/Posts");
-const imagesDir = path.join(home, "obsidian-vault/Uses/Images");
+const findObsidianVault = () => {
+  const possibleLocations = [
+    path.join(home, "obsidian-vault"),
+    path.join(home, "Documents", "obsidian-vault"),
+  ];
+
+  for (const location of possibleLocations) {
+    if (fs.existsSync(location)) {
+      console.log(`Found obsidian-vault at: ${location}`);
+      return location;
+    }
+  }
+};
+
+const vaultPath = findObsidianVault();
+const postsDir = path.join(vaultPath, "Uses/Posts");
+const imagesDir = path.join(vaultPath, "Uses/Images");
 const contentDir = path.join(__dirname, "src/content/posts");
 const assetsDir = path.join(__dirname, "public/assets");
 
@@ -27,11 +43,18 @@ const copyFile = (source, target) => {
 };
 
 const normalizeImagesToAstroMd = filePath => {
+  console.log(`normalizeImagesToAstroMd -> init for ${filePath}`);
+
   const regexToGetValue = /!\[\[([^[\]]*)\]\]/g;
   const regexToReplace = /[!\[\]]/g;
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const s = filePath.split("/");
+  let s = filePath.split("/");
+  if (s.length <= 1) {
+    s = filePath.split("\\");
+  }
   const directoryName = normalizePath(s[s.length - 1].replace(".md", ""));
+
+  console.log(`normalizeImagesToAstroMd -> directoryName: ${directoryName}`);
 
   const images =
     fileContent
@@ -39,18 +62,21 @@ const normalizeImagesToAstroMd = filePath => {
       ?.map(image => image.replace(regexToReplace, "")) || [];
 
   if (images.length) {
+    console.log("normalizeImagesToAstroMd -> has images to normalize");
     let modifiedContent = fileContent;
     images.forEach(image => {
-      const normalizedImage = normalizePath(image);
+      const imageName = path.basename(image);
+      const normalizedImage = normalizePath(imageName);
+      const imageAlt = imageName.split(".")[0];
       modifiedContent = modifiedContent.replace(
         `![[${image}]]`,
-        `![${
-          image.split(".")[0]
-        }](/uses/assets/${directoryName}/${normalizedImage})`,
+        `![${imageAlt}](/uses/assets/${directoryName}/${normalizedImage})`,
       );
     });
     return modifiedContent;
   }
+
+  console.log(`normalizeImagesToAstroMd -> end for ${filePath}`);
   return fileContent;
 };
 

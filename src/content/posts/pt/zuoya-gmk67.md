@@ -4,6 +4,7 @@ description: Teclado mecânico gamer customizado
 pubDate: 2024-01-29T21:53Z
 tags:
   - Computação
+  - InUse
 heroImage: /uses/assets/zuoya-gmk67/zuoya-gmk67.jpg
 videos:
   - /uses/assets/zuoya-gmk67/zuoya-gmk67-write.mp4

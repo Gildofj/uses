@@ -4,6 +4,7 @@ description: Notebook
 pubDate: 2024-01-22T19:45Z
 tags:
   - Computação
+  - Deprecated
 heroImage: /uses/assets/dell-latitude-3420/dell-latitude-3420.jpeg
 ---
 Esse notebook não é de fato meu, é o computador disponibilizado pela minha empresa para o dia a dia, porém uso ele somente quando preciso trabalhar fora de casa, tendo em vista que o meu pessoal possui uma configuração melhor, tornando o dia a dia mais produtivo. Porém, isso não torna esse equipamento ruim, tenho atualmente trabalhado principalmente com mobile, mais especificamente com android nativo, sendo assim utilizo android studio no dia a dia, exigindo um computador mais potente do que o convencional, sendo assim não pode ser qualquer configuração para conseguir trabalhar sem problemas de desempenho e gargalos durante o processo de desenvolvimento e testes.
