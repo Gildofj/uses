@@ -25,14 +25,13 @@ export default function DropdownMenuItem({
             className={classNames(
               focus ? "bg-purple-200 dark:bg-zinc-700" : "",
               "block px-4 py-2 text-sm w-full text-left cursor-pointer",
-              className,
             )}
           >
             <Element
               {...(href && { href })}
               {...(onClick && { onClick })}
               {...passthroughProps}
-              className="cursor-pointer"
+              className={classNames("cursor-pointer", className)}
             >
               {children}
             </Element>
