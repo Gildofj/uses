@@ -1,10 +1,10 @@
 ---
-title: "{{title}}"
+title: G703 LightSpeed
 description: Mouse gamer
-pubDate: "{{date}}T{{time}}Z"
+pubDate: 2025-01-11T10:48Z
 tags:
   - Computação
-heroImage: /uses/assets/{{title}}/{{title}}.jpeg
+heroImage: /uses/assets/g703-lightspeed/g703-lightspeed.jpeg
 ---
 Após usar o Redragon Cobra V2 por bastante tempo, posso dizer que este mouse é um sucessor à altura, e talvez até melhor. Como gosto de modelos mais pesados e robustos, ele atende perfeitamente tanto para o trabalho quanto para momentos de lazer jogando.
 
