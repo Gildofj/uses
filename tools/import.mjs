@@ -83,7 +83,7 @@ const normalizeImagesToAstroMd = filePath => {
 const verifyFileTypeAndCopy = (sourcePath, targetPath) => {
   if (targetPath.includes("untitled")) return;
   if (fs.statSync(sourcePath).isDirectory()) {
-    copyFilesFromDirectory(sourcePath, targetPath);
+    syncFilesBetweenDirectories(sourcePath, targetPath);
   } else {
     if (sourcePath.includes("Posts")) {
       const newContent = normalizeImagesToAstroMd(sourcePath);
@@ -95,7 +95,25 @@ const verifyFileTypeAndCopy = (sourcePath, targetPath) => {
   }
 };
 
-const copyFilesFromDirectory = (sourceDir, targetDir) => {
+const deleteUnusedFiles = (sourceDir, targetDir) => {
+  if (!fs.existsSync(targetDir)) return;
+
+  const sourceFiles = fs
+    .readdirSync(sourceDir)
+    .map(file => normalizePath(file));
+  const targetFiles = fs.readdirSync(targetDir);
+
+  targetFiles.forEach(file => {
+    const targetPath = path.join(targetDir, file);
+
+    if (!sourceFiles.includes(file)) {
+      fs.rmSync(targetPath, { recursive: true, force: true });
+      console.log(`Deleted (sync): ${targetPath}`);
+    }
+  });
+};
+
+const syncFilesBetweenDirectories = (sourceDir, targetDir) => {
   createDirectoryIfNotExists(targetDir);
 
   const files = fs.readdirSync(sourceDir);
@@ -105,10 +123,12 @@ const copyFilesFromDirectory = (sourceDir, targetDir) => {
 
     verifyFileTypeAndCopy(sourcePath, targetPath);
   });
+
+  deleteUnusedFiles(sourceDir, targetDir);
 };
 
 const watchAndCopyFiles = (sourceDir, targetDir) => {
-  copyFilesFromDirectory(sourceDir, targetDir);
+  syncFilesBetweenDirectories(sourceDir, targetDir);
 
   fs.watch(sourceDir, { recursive: true }, (_, filename) => {
     const sourcePath = path.join(sourceDir, filename);
@@ -117,8 +137,10 @@ const watchAndCopyFiles = (sourceDir, targetDir) => {
     if (fs.existsSync(sourcePath)) {
       verifyFileTypeAndCopy(sourcePath, targetPath);
     } else {
-      // fs.remo
-      console.log(`File deleted: ${targetPath}`);
+      if (fs.existsSync(targetPath)) {
+        fs.rmSync(targetPath, { recursive: true, force: true });
+        console.log(`Deleted: ${targetPath}`);
+      }
     }
   });
 

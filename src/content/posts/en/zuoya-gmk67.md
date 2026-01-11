@@ -4,7 +4,6 @@ description: Gamer custom keyboard
 pubDate: 2024-02-04T12:56Z
 tags:
   - Computação
-  - InUse
 heroImage: /uses/assets/zuoya-gmk67/zuoya-gmk67.jpg
 videos:
   - /uses/assets/zuoya-gmk67/zuoya-gmk67-write.mp4

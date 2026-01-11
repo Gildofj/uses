@@ -4,7 +4,6 @@ description: Teclado da Apple
 pubDate: 2024-01-14T15:03Z
 tags:
   - Computação
-  - InUse
 heroImage: /uses/assets/magic-keyboard/magic-keyboard.jpeg
 videos:
   - /uses/assets/magic-keyboard/magic-keyboard-write.mp4

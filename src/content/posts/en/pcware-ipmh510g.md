@@ -4,7 +4,6 @@ description: Desktop computer
 pubDate: 2024-01-11T22:26Z
 tags:
   - Computação
-  - InUse
 heroImage: /uses/assets/pcware-ipmh510g/pcware-ipmh510g.jpeg
 ---
 Currently, I work as a full-stack developer, and often, I need to run multiple programs simultaneously or even run resource-intensive programs like Android Studio, which, by simulating devices for testing mobile code, puts a significant demand on the computer and its memory. With this in mind, and considering my leisure as well, I fulfilled a childhood dream of buying a famous Gaming PC.
