@@ -1,6 +1,6 @@
 import { MenuItem } from "@headlessui/react";
 import { Fragment, type ReactNode } from "react";
-import { classNames } from "../../utils/classnames";
+import { classNames } from "../../utils/classNames";
 
 type Props = {
   href?: string;
