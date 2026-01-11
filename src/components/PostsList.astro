@@ -4,7 +4,9 @@ import { Image } from "astro:assets";
 import { getUrlLocale } from "../i18n/utils";
 import type { Category } from "../@types/Category";
 import { removerAccents } from "../utils/removeAccents";
+import { classNames } from "../utils/classNames";
 
+const DEPRECATED_TAG = "Deprecated";
 export interface Props {
   category?: Category;
 }
@@ -22,7 +24,8 @@ const posts = (await getCollection("posts"))
         ? p.data.tags
             ?.map((t: string) => removerAccents(t).toLowerCase())
             .includes(category.id.toLowerCase())
-        : true)
+        : true) &&
+      (showOutOfUse ? true : !p.data.tags?.includes(DEPRECATED_TAG))
     );
   })
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
@@ -32,12 +35,16 @@ const posts = (await getCollection("posts"))
   {
     posts.map(post => {
       const [locale, ...slug] = post.slug.split("/");
+      const isDeprecated = post.data.tags?.includes(DEPRECATED_TAG);
 
       return (
         <li class="text-center mb-4">
           <a href={`/uses/${locale}/posts/${slug.join("/")}`}>
             <Image
-              class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+              class={classNames(
+                "border border-slate-300 dark:border-zinc-700 rounded-xl",
+                isDeprecated && "grayscale"
+              )}
               src={post.data.heroImage || "/uses/cover.jpeg"}
               width={720 * 2}
               height={500 * 2}

@@ -1,9 +1,6 @@
 import { Menu, MenuButton, MenuItems, Transition } from "@headlessui/react";
 import { Fragment, type ReactNode } from "react";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "../../utils/classnames";
 
 interface DropdownMenuProps {
   iconButton: ReactNode;

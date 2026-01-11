@@ -9,6 +9,7 @@ import Masthead from "../../components/Masthead.astro";
 import PostsList from "../../components/PostsList.astro";
 import Link from "../../components/_UI/Link.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import ShowOutOfUseEquipments from "../../components/ShowDeprecatedEquipments";
 ---
 
 <!doctype html>
@@ -45,6 +46,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
         </section>
         <section>
           <PostsList />
+          <ShowOutOfUseEquipments client:load />
         </section>
         <CreatedWithSection />
       </Content>

@@ -9,6 +9,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 import Footer from "../components/Footer.astro";
 import PostsList from "../components/PostsList.astro";
 import type { Category } from "../@types/Category";
+import ShowOutOfUseEquipments from "../components/ShowDeprecatedEquipments";
 
 export interface Props {
   category: Category;
@@ -30,6 +31,7 @@ const { category } = Astro.props;
         <Breadcrumb>{category.name}</Breadcrumb>
         <section>
           <PostsList category={category} />
+          <ShowOutOfUseEquipments client:load />
         </section>
       </Content>
       <Footer />
