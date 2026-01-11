@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
@@ -147,6 +148,8 @@ const { title, description, image = `${base}cover.jpeg` } = Astro.props;
   name="google-site-verification"
   content="AzjfR1JEdo5QFJAHE9ggfNeBrRAASpeT2drc49Rbgt8"
 />
+
+<ClientRouter />
 
 <!-- Google Analytics -->
 <script src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"></script>
