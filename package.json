@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "import": "node --experimental-vm-modules tools/import.mjs",
+    "import-process": "CI=true node --experimental-vm-modules tools/import.mjs",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
     "dev": "astro dev",
@@ -10,7 +12,6 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "import": "node --experimental-vm-modules tools/import.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

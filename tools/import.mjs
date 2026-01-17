@@ -11,6 +11,7 @@ const findObsidianVault = () => {
   const possibleLocations = [
     path.join(home, "obsidian-vault"),
     path.join(home, "Documents", "obsidian-vault"),
+    "./obsidian-vault-sync", // For CI/CD
   ];
 
   for (const location of possibleLocations) {
@@ -19,6 +20,9 @@ const findObsidianVault = () => {
       return location;
     }
   }
+
+  console.error("Obsidian vault not found in expected locations.");
+  process.exit(1);
 };
 
 const vaultPath = findObsidianVault();
@@ -37,22 +41,17 @@ const createDirectoryIfNotExists = directory => {
   }
 };
 
-const copyFile = (source, target) => {
-  fs.copyFileSync(source, target);
-  console.log(`Copied ${source} to ${target}`);
-};
-
 const normalizeImagesToAstroMd = filePath => {
   console.log(`normalizeImagesToAstroMd -> init for ${filePath}`);
 
   const regexToGetValue = /!\[\[([^[\]]*)\]\]/g;
   const regexToReplace = /[!\[\]]/g;
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  let s = filePath.split("/");
-  if (s.length <= 1) {
-    s = filePath.split("\\");
-  }
-  const directoryName = normalizePath(s[s.length - 1].replace(".md", ""));
+
+  const pathsParts = filePath.split(/[/\\]/);
+  const directoryName = normalizePath(
+    pathsParts[pathsParts.length - 1].replace(".md", ""),
+  );
 
   console.log(`normalizeImagesToAstroMd -> directoryName: ${directoryName}`);
 
@@ -82,15 +81,17 @@ const normalizeImagesToAstroMd = filePath => {
 
 const verifyFileTypeAndCopy = (sourcePath, targetPath) => {
   if (targetPath.includes("untitled")) return;
+
   if (fs.statSync(sourcePath).isDirectory()) {
     syncFilesBetweenDirectories(sourcePath, targetPath);
   } else {
     if (sourcePath.includes("Posts")) {
       const newContent = normalizeImagesToAstroMd(sourcePath);
       fs.writeFileSync(targetPath, newContent, "utf-8");
-      console.log(`Rewritten file to target ${targetPath}`);
+      console.log(`Normalized and wrote: ${targetPath}`);
     } else {
-      copyFile(sourcePath, targetPath);
+      fs.copyFileSync(sourcePath, targetPath);
+      console.log(`Copied ${sourcePath} -> ${targetPath}`);
     }
   }
 };
@@ -114,6 +115,11 @@ const deleteUnusedFiles = (sourceDir, targetDir) => {
 };
 
 const syncFilesBetweenDirectories = (sourceDir, targetDir) => {
+  if (!fs.existsSync(sourceDir)) {
+    console.warn(`Source directory does not exist: ${sourceDir}`);
+    return;
+  }
+
   createDirectoryIfNotExists(targetDir);
 
   const files = fs.readdirSync(sourceDir);
@@ -127,25 +133,34 @@ const syncFilesBetweenDirectories = (sourceDir, targetDir) => {
   deleteUnusedFiles(sourceDir, targetDir);
 };
 
-const watchAndCopyFiles = (sourceDir, targetDir) => {
-  syncFilesBetweenDirectories(sourceDir, targetDir);
+const isCI = process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
 
-  fs.watch(sourceDir, { recursive: true }, (_, filename) => {
-    const sourcePath = path.join(sourceDir, filename);
-    const targetPath = path.join(targetDir, normalizePath(filename));
+if (isCI) {
+  console.log("Running in CI environment. Performing one-time sync.");
+  syncFilesBetweenDirectories(postsDir, contentDir);
+  syncFilesBetweenDirectories(imagesDir, assetsDir);
+  console.log("Sync completed.");
+} else {
+  const watchAndCopyFiles = (sourceDir, targetDir) => {
+    syncFilesBetweenDirectories(sourceDir, targetDir);
 
-    if (fs.existsSync(sourcePath)) {
-      verifyFileTypeAndCopy(sourcePath, targetPath);
-    } else {
-      if (fs.existsSync(targetPath)) {
-        fs.rmSync(targetPath, { recursive: true, force: true });
-        console.log(`Deleted: ${targetPath}`);
+    fs.watch(sourceDir, { recursive: true }, (_, filename) => {
+      const sourcePath = path.join(sourceDir, filename);
+      const targetPath = path.join(targetDir, normalizePath(filename));
+
+      if (fs.existsSync(sourcePath)) {
+        verifyFileTypeAndCopy(sourcePath, targetPath);
+      } else {
+        if (fs.existsSync(targetPath)) {
+          fs.rmSync(targetPath, { recursive: true, force: true });
+          console.log(`Deleted: ${targetPath}`);
+        }
       }
-    }
-  });
+    });
 
-  console.log(`Watching for changes in ${sourceDir}...`);
-};
+    console.log(`Watching for changes in ${sourceDir}...`);
+  };
 
-watchAndCopyFiles(postsDir, contentDir);
-watchAndCopyFiles(imagesDir, assetsDir);
+  watchAndCopyFiles(postsDir, contentDir);
+  watchAndCopyFiles(imagesDir, assetsDir);
+}
