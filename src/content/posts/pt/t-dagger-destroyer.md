@@ -9,7 +9,8 @@ heroImage: /uses/assets/t-dagger-destroyer/t-dagger-destroyer.jpeg
 videos:
   - /uses/assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4
 ---
-Como curto muito jogar, principalmente jogos competitivos, sempre tive o interesse de comprar um teclado mecânico, e após um tempo encontrei esse que na época foi um ótimo custo benefício, e com o tempo descobri que além de ser ótimo para jogar, teclados mecânicos tornavam a digitação muito mais confortável, então deu o match perfeito de um periférico útil tanto para o lazer quanto para o trabalho.
+
+Como curto muito jogar, principalmente jogos competitivos, sempre tive o interesse de comprar um teclado mecânico, e após um tempo encontrei esse que na época foi um ótimo custo benefício, e com o tempo descobri que além de ser ótimo para jogar, teclados mecânicos tornavam a digitação muito mais confortável, então deu o match perfeito de um periférico útil tanto para o lazer quanto para o trabalho..
 
 Claro que na época que comprei esse teclado não me atentei a alguns pontos, tendo em vista minha falta de conhecimento no assunto, depois de um tempo vi que o teclado numérico na lateral ocupava um espaço desnecessário para mim, tendo em vista que não uso muito ele no dia a dia e ele faz com que o teclado ocupe um espaço muito grande. Outro ponto é que esse teclado possui switches de clique outemu que são switches de custo mais baixo e tem fama de não possuir um bom funcionamento a longo prazo e o plástico utilizado no acabamento é o ABS que não é o mais resistente, sendo esse o plástico PBT.
 
