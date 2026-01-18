@@ -17,7 +17,7 @@ jobs:
       - name: Checkout blog repository
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CAN_DISPATCH_WORKFLOW_TOKEN }}
           fetch-depth: 0 # Necessário para comparações de histórico
 
       - name: Setup pnpm
