@@ -50,7 +50,7 @@ jobs:
           # Criar diretórios necessários
           mkdir -p src/content/posts/{en,pt,es} public/assets
 
-          # Copiar posts (com tratamento de erros melhorado)
+          # Copiar posts
           rsync -av --ignore-missing-args obsidian-vault-sync/Uses/Posts/en/ src/content/posts/en/ || true
           rsync -av --ignore-missing-args obsidian-vault-sync/Uses/Posts/pt/ src/content/posts/pt/ || true
           rsync -av --ignore-missing-args obsidian-vault-sync/Uses/Posts/es/ src/content/posts/es/ || true
@@ -60,6 +60,8 @@ jobs:
 
           # Processar arquivos importados
           pnpm run import-process
+
+          rm -rf obsidian-vault-sync
 
       - name: Check for changes
         id: verify-changes
