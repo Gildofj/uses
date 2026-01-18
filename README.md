@@ -265,11 +265,10 @@ Isso garante que mesmo se o webhook falhar, o site será sincronizado regularmen
 
 **Resumo das permissões usadas:**
 
-| Token                                | Repositório      | Permissões                       |
-| ------------------------------------ | ---------------- | -------------------------------- |
-| `OBSIDIAN_VAULT_TOKEN`               | `obsidian-vault` | Contents (Read-only)             |
-| `OBSIDIAN_WEBHOOK_TOKEN`             | `uses`           | Contents (R/W) + Workflows (R/W) |
-| `USES_COMMIT_CAN_RUN_WORKFLOW_TOKEN` | `uses`           | Contents (R/W) + Workflows (R/W) |
+| Token                          | Repositório      | Permissões                       |
+| ------------------------------ | ---------------- | -------------------------------- |
+| `OBSIDIAN_VAULT_TOKEN`         | `obsidian-vault` | Contents (Read-only)             |
+| `USES_WORKFLOW_DISPATCH_TOKEN` | `uses`           | Contents (R/W) + Workflows (R/W) |
 
 **Dica de segurança:** Regenere os tokens a cada 3-6 meses como boa prática.
 
