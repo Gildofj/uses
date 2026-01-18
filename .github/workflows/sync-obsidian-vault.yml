@@ -61,6 +61,7 @@ jobs:
           # Processar arquivos importados
           pnpm run import-process
 
+          # Limpar diretório temporário
           rm -rf obsidian-vault-sync
 
       - name: Check for changes
