@@ -4,7 +4,7 @@ description: Mouse gamer
 pubDate: 2025-01-11T10:48Z
 tags:
   - Computação
-heroImage: /uses/assets/g703-lightspeed/g703-lightspeed.jpeg
+heroImage: /uses/assets/g703-lightspeed/g703-lightspeed.jpg
 ---
 After using the Redragon Cobra V2 for quite some time, I can say that this mouse is a worthy successor, and perhaps even better. Since I prefer heavier and more robust models, it fits perfectly for both work and leisure gaming.
 
