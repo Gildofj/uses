@@ -32,10 +32,10 @@ const posts = (await getCollection("posts"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const activeEquipment = posts.filter(
-  post => !post.data.tags?.includes(DEPRECATED_TAG)
+  post => !post.data.tags?.includes(DEPRECATED_TAG),
 );
 const outOfuseEquipment = posts.filter(post =>
-  post.data.tags?.includes(DEPRECATED_TAG)
+  post.data.tags?.includes(DEPRECATED_TAG),
 );
 ---
 
@@ -49,7 +49,7 @@ const outOfuseEquipment = posts.filter(post =>
           <a href={`/uses/${locale}/posts/${slug.join("/")}`}>
             <Image
               class={classNames(
-                "border border-purple-300 dark:border-zinc-700 rounded-xl"
+                "border border-purple-300 dark:border-zinc-700 rounded-xl",
               )}
               src={post.data.heroImage || "/uses/cover.jpeg"}
               width={720 * 2}
@@ -117,37 +117,41 @@ const outOfuseEquipment = posts.filter(post =>
 }
 
 <script is:inline>
-  const loadMoreBtn = document.getElementById("load-more-btn");
-  const loadMoreBtnText = document.getElementById("load-more-btn-text");
-  const loadMoreBtnIcon = document.getElementById("load-more-btn-icon");
-  const outOfUseEquipments = document.getElementById("out-of-use-equipments");
+  function initOutOfUseEquipmentsButton() {
+    const loadMoreBtn = document.getElementById("load-more-btn");
+    const loadMoreBtnText = document.getElementById("load-more-btn-text");
+    const loadMoreBtnIcon = document.getElementById("load-more-btn-icon");
+    const outOfUseEquipments = document.getElementById("out-of-use-equipments");
 
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      const showMoreText = loadMoreBtn.getAttribute("data-text-show-more");
-      const showLessText = loadMoreBtn.getAttribute("data-text-show-less");
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener("click", () => {
+        const showMoreText = loadMoreBtn.getAttribute("data-text-show-more");
+        const showLessText = loadMoreBtn.getAttribute("data-text-show-less");
 
-      if (
-        outOfUseEquipments.style.maxHeight &&
-        outOfUseEquipments.style.maxHeight !== "0px"
-      ) {
-        outOfUseEquipments.style.maxHeight = "0px";
-        loadMoreBtnText.textContent = showMoreText;
-      } else {
-        outOfUseEquipments.style.maxHeight =
-          outOfUseEquipments.scrollHeight + "px";
+        if (
+          outOfUseEquipments.style.maxHeight &&
+          outOfUseEquipments.style.maxHeight !== "0px"
+        ) {
+          outOfUseEquipments.style.maxHeight = "0px";
+          loadMoreBtnText.textContent = showMoreText;
+        } else {
+          outOfUseEquipments.style.maxHeight =
+            outOfUseEquipments.scrollHeight + "px";
 
-        setTimeout(() => {
-          outOfUseEquipments.scrollIntoView({
-            behavior: "smooth",
-            block: "end",
-          });
-        }, 300);
+          setTimeout(() => {
+            outOfUseEquipments.scrollIntoView({
+              behavior: "smooth",
+              block: "end",
+            });
+          }, 300);
 
-        loadMoreBtnText.textContent = showLessText;
-      }
+          loadMoreBtnText.textContent = showLessText;
+        }
 
-      loadMoreBtnIcon.classList.toggle("rotate-180");
-    });
+        loadMoreBtnIcon.classList.toggle("rotate-180");
+      });
+    }
   }
+
+  document.addEventListener("astro:page-load", initOutOfUseEquipmentsButton);
 </script>
