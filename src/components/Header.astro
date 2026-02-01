@@ -52,38 +52,6 @@ const t = useTranslate(locale);
       </HeaderLink>
     </div>
     <div class="flex items-center gap-2 md:gap-3 px-2">
-      <a
-        class="inline-block text-black dark:text-white no-underline"
-        href={GITHUB_URL}
-        target="_blank"
-      >
-        <span class="sr-only">Go to my Github</span>
-        <GithubLogoIcon style={{ fontSize: "2rem" }} />
-      </a>
-      <a
-        class="inline-block text-black dark:text-white no-underline"
-        href={LINKEDIN_URL}
-        target="_blank"
-      >
-        <span class="sr-only">Go to my Linkedin</span>
-        <LinkedinLogoIcon style={{ fontSize: "2rem" }} />
-      </a>
-      <a
-        class="hidden md:inline-block text-black dark:text-white no-underline"
-        href={INSTAGRAM_URL}
-        target="_blank"
-      >
-        <span class="sr-only">Follow Me on Instagram</span>
-        <InstagramLogoIcon style={{ fontSize: "2rem" }} />
-      </a>
-      <a
-        class="hidden md:inline-block text-black dark:text-white no-underline"
-        href={X_URL}
-        target="_blank"
-      >
-        <span class="sr-only">Follow Me on X</span>
-        <XLogoIcon style={{ fontSize: "2rem" }} />
-      </a>
       <ThemeToggleButton client:load />
       <div class="hidden lg:block">
         <DropdownMenuLocale client:load client:only />
