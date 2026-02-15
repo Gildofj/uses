@@ -4,9 +4,8 @@ description: Teclado da Apple
 pubDate: 2024-01-14T15:03Z
 tags:
   - Computação
-heroImage: /uses/assets/magic-keyboard/magic-keyboard.jpeg
-videos:
-  - /uses/assets/magic-keyboard/magic-keyboard-write.mp4
+heroImage: /assets/magic-keyboard/magic-keyboard.jpeg
+videos: /assets/magic-keyboard/magic-keyboard-write.mp4
 ---
 Depois de algum tempo utilizando teclados mecânicos resolvi experimentar uma proposta bem diferente, fui com certo receio confesso, mas me surpreendi muito positivamente em minha experiência. O Magic Keyboard da Apple além de ser bem mais compacto, deixando o seu ambiente de trabalho mais clean, tem um conforto ao digitar muito bom, além de trazer o layout US da apple que na minha opinião é o mais ergonômico dessa linha na atualidade. Atualmente para trabalhar no dia a dia ele tem sido meu teclado principal, e após começar a utilizá-lo tenho me sentido mais produtivo e com menos fadiga nas mãos após horas de trabalho.
 
