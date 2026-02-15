@@ -12,7 +12,7 @@ export async function GET(context) {
       const [locale, ...slug] = post.slug.split("/");
       return {
         ...post.data,
-        link: `/uses/${locale}/posts/${slug.join("/")}`,
+        link: `/${locale}/posts/${slug.join("/")}`,
       };
     }),
   });

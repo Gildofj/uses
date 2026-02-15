@@ -23,9 +23,9 @@ export function useLocale() {
     if (!window.location.pathname.includes(locale)) {
       const slug = window.location.pathname;
       if (slug.split(LOCALE.PT).length > 1)
-        window.location.pathname = "/uses/" + locale + slug.split(LOCALE.PT)[1];
+        window.location.pathname = "/" + locale + slug.split(LOCALE.PT)[1];
       if (slug.split(LOCALE.EN).length > 1)
-        window.location.pathname = "/uses/" + locale + slug.split(LOCALE.EN)[1];
+        window.location.pathname = "/" + locale + slug.split(LOCALE.EN)[1];
     }
   }, [locale]);
 

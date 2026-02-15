@@ -15,7 +15,7 @@ export default function DropdownMenuNav() {
       iconButton={<ListIcon className="h-5 w-5" />}
       className="w-56"
     >
-      <DropdownMenuItem className="lg:hidden" href={`/uses/${locale}`}>
+      <DropdownMenuItem className="lg:hidden" href={`/${locale}`}>
         {t("nav.home")}
       </DropdownMenuItem>
       <DropdownMenuItem className="lg:hidden" href={PORTFOLIO_URL}>
@@ -30,10 +30,10 @@ export default function DropdownMenuNav() {
       <div className="px-3 py-2 uppercase font-bold text-xs">
         {t("nav.categories")}
       </div>
-      <DropdownMenuItem href={`/uses/${locale}/categories/computacao`}>
+      <DropdownMenuItem href={`/${locale}/categories/computacao`}>
         {t("nav.computing")}
       </DropdownMenuItem>
-      <DropdownMenuItem href={`/uses/${locale}/categories/desk`}>
+      <DropdownMenuItem href={`/${locale}/categories/desk`}>
         {t("nav.desk")}
       </DropdownMenuItem>
       <div className="px-3 py-2 uppercase font-bold text-xs lg:hidden">

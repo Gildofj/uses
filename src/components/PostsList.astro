@@ -46,12 +46,12 @@ const outOfuseEquipment = posts.filter(post =>
 
       return (
         <li class="text-center mb-4">
-          <a href={`/uses/${locale}/posts/${slug.join("/")}`}>
+          <a href={`/${locale}/posts/${slug.join("/")}`}>
             <Image
               class={classNames(
                 "border border-purple-300 dark:border-zinc-700 rounded-xl",
               )}
-              src={post.data.heroImage || "/uses/cover.jpeg"}
+              src={post.data.heroImage || "/cover.jpeg"}
               width={720 * 2}
               height={500 * 2}
               alt="Thumbnail"
@@ -81,10 +81,10 @@ const outOfuseEquipment = posts.filter(post =>
 
         return (
           <li class="text-center mb-4">
-            <a href={`/uses/${locale}/posts/${slug.join("/")}`}>
+            <a href={`/${locale}/posts/${slug.join("/")}`}>
               <Image
                 class="border border-purple-300 dark:border-zinc-700 rounded-xl grayscale"
-                src={post.data.heroImage || "/uses/cover.jpeg"}
+                src={post.data.heroImage || "/cover.jpeg"}
                 width={720 * 2}
                 height={500 * 2}
                 alt="Thumbnail"

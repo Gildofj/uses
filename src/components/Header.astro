@@ -3,21 +3,8 @@ import DropdownMenuLocale from "./DropdownMenuLocale.tsx";
 import DropdownMenuNav from "./DropdownMenuNav.tsx";
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
-import {
-  PORTFOLIO_URL,
-  X_URL,
-  GITHUB_URL,
-  REPO_URL,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-} from "../consts";
-import {
-  CodeIcon,
-  GithubLogoIcon,
-  XLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-} from "@phosphor-icons/react";
+import { PORTFOLIO_URL, REPO_URL } from "../consts";
+import { CodeIcon, GithubLogoIcon } from "@phosphor-icons/react";
 import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
@@ -31,7 +18,7 @@ const t = useTranslate(locale);
     >
       <a
         class="no-underline inline-flex items-center gap-1 md:gap-2"
-        href={`/uses/${locale}`}
+        href={`/${locale}`}
       >
         <CodeIcon style={{ fontSize: "1.7rem" }} />
         <div>gildofj<span class="text-purple-500">.dev</span></div>
@@ -40,7 +27,7 @@ const t = useTranslate(locale);
     <div
       class="items-center gap-6 hidden lg:flex absolute left-1/2 translate-x-[-50%]"
     >
-      <HeaderLink href={`/uses/${locale}`}>{t("nav.home")}</HeaderLink>
+      <HeaderLink href={`/${locale}`}>{t("nav.home")}</HeaderLink>
       <HeaderLink href={PORTFOLIO_URL}>{t("nav.about")}</HeaderLink>
       <HeaderLink
         class="inline-flex items-center gap-2"
