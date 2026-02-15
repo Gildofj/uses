@@ -4,6 +4,8 @@ import react from "@astrojs/react";
 import addClasses from "rehype-add-classes";
 import tailwindcss from "@tailwindcss/vite";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://uses.gildofj.dev",
@@ -73,6 +75,7 @@ export default defineConfig({
 
   // Performance optimizations
   compressHTML: true,
+
   build: {
     inlineStylesheets: "auto",
   },
@@ -80,4 +83,6 @@ export default defineConfig({
   devToolbar: {
     enabled: true,
   },
+
+  adapter: vercel(),
 });
