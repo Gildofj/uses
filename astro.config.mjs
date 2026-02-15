@@ -6,8 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gildofj.github.io",
-  base: "/uses/",
+  site: "https://uses.gildofj.dev",
+  base: "/",
   output: "static",
 
   integrations: [
