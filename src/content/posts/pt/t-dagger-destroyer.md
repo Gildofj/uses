@@ -5,9 +5,9 @@ pubDate: 2024-01-14T01:21Z
 tags:
   - Computação
   - Deprecated
-heroImage: /src/content/images/t-dagger-destroyer/t-dagger-destroyer.jpg
+heroImage: /src/assets/t-dagger-destroyer/t-dagger-destroyer.jpg
 videos:
-  - /src/content/images/t-dagger-destroyer/t-dagger-destroyer-write.mp4
+  - /src/assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4
 ---
 Como curto muito jogar, principalmente jogos competitivos, sempre tive o interesse de comprar um teclado mecânico, e após um tempo encontrei esse que na época foi um ótimo custo benefício, e com o tempo descobri que além de ser ótimo para jogar, teclados mecânicos tornavam a digitação muito mais confortável, então deu o match perfeito de um periférico útil tanto para o lazer quanto para o trabalho.
 
