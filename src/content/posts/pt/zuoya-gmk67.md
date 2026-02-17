@@ -4,9 +4,9 @@ description: Teclado mecânico gamer customizado
 pubDate: 2024-01-29T21:53Z
 tags:
   - Computação
-heroImage: /../../../assets/zuoya-gmk67/zuoya-gmk67.jpg
+heroImage: ./assets/zuoya-gmk67/zuoya-gmk67.jpg
 videos:
-  - /../../../assets/zuoya-gmk67/zuoya-gmk67-write.mp4
+  - ./assets/zuoya-gmk67/zuoya-gmk67-write.mp4
 ---
 No momento que estou escrevendo isso essa é a minha mais nova aquisição, o GMK67 da Zuoya, é um teclado que venho namorando a muito tempo, ele é de uma linha de teclados customizados que já vem com algumas modificações de fábrica, esse tipo de teclado visa proporcionar uma digitação suave e agradável, seja no ato de digitar em si ou a sonoridade da digitação. Ele possui uma ótima qualidade em seu acabamento sendo muito resistente e com uma base muito linda, tem uma altura excelente, sendo maior que um teclado habitual, além de dois níveis de ajuste para você deixar da melhor maneira para seu uso.
 
