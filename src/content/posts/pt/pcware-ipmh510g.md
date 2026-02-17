@@ -4,7 +4,7 @@ description: Computador de mesa / Desktop
 pubDate: 2024-01-11T22:26Z
 tags:
   - Computação
-heroImage: ./assets/pcware-ipmh510g/pcware-ipmh510g.jpeg
+heroImage: ../../../assets/pcware-ipmh510g/pcware-ipmh510g.jpeg
 ---
 Atualmente atuo como desenvolvedor full-stack e muitas vezes é necessário que eu rode diversos programas ao mesmo tempo, ou até mesmo rode programas muito pesados como o Android Studio, por exemplo, que por simular devices para testar seu código mobile acaba exigindo bastante do computador e de sua memória. Tendo isso em vista, e pensando em meu lazer também, realizei um sonho de infância que foi comprar o famoso PC Gamer.
 
@@ -14,4 +14,4 @@ Com certeza nem tudo são flores, apesar dessas vantagens vem o ônus de perder 
 
 Caso estejam curiosos informarei especificações de meu PC a seguir:
 
-![Especificaçoes PC](./assets/pcware-ipmh510g/especificaçoes-pc.png)
+![Especificaçoes PC](../../../assets/pcware-ipmh510g/especificaçoes-pc.png)
