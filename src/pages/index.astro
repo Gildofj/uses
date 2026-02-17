@@ -1,8 +1,4 @@
 ---
-const locale =
-  typeof localStorage !== "undefined" && localStorage.getItem("locale")
-    ? localStorage.getItem("locale")
-    : "pt";
+// Redirect is handled by vercel.json at the CDN level
+// This file intentionally left empty
 ---
-
-<meta http-equiv="refresh" content=`0;url=/${locale}/` />

@@ -11,14 +11,13 @@ export default defineConfig({
   site: "https://uses.gildofj.dev",
   base: "/",
   output: "static",
-
   integrations: [
     sitemap({
       i18n: {
-        defaultLocale: "pt-br",
+        defaultLocale: "pt",
         locales: {
           en: "en",
-          "pt-br": "pt-BR",
+          pt: "pt",
         },
       },
     }),
@@ -26,18 +25,13 @@ export default defineConfig({
       experimentalReactChildren: true,
     }),
   ],
-
   i18n: {
-    defaultLocale: "pt-br",
-    locales: ["en", "pt-br"],
+    defaultLocale: "pt",
+    locales: ["en", "pt"],
     routing: {
-      prefixDefaultLocale: false,
-    },
-    fallback: {
-      en: "pt-br",
+      prefixDefaultLocale: true,
     },
   },
-
   markdown: {
     shikiConfig: {
       theme: "github-dark",
@@ -65,24 +59,19 @@ export default defineConfig({
       ],
     ],
   },
-
   vite: {
     plugins: [tailwindcss()],
     build: {
       cssMinify: "lightningcss",
     },
   },
-
   // Performance optimizations
   compressHTML: true,
-
   build: {
     inlineStylesheets: "auto",
   },
-
   devToolbar: {
     enabled: true,
   },
-
   adapter: vercel(),
 });

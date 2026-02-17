@@ -1,7 +1,7 @@
 import { ui, defaultLocale } from "./ui";
 
 export function getUrlLocale(url: URL) {
-  const [, , locale] = url.pathname.split("/");
+  const [, locale] = url.pathname.split("/");
   if (locale in ui) return locale as keyof typeof ui;
   return defaultLocale;
 }
