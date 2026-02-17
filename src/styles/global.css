@@ -126,7 +126,7 @@
     overflow: clip;
   }
 
-  ::view-transition(post) {
+  ::view-transition-group(post) {
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 

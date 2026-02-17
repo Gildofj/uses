@@ -25,6 +25,11 @@ export default defineConfig({
       experimentalReactChildren: true,
     }),
   ],
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp",
+    },
+  },
   i18n: {
     defaultLocale: "pt",
     locales: ["en", "pt"],
