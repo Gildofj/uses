@@ -13,7 +13,7 @@ Being an avid gamer, especially in competitive games, I've always had an interes
 
 Of course, at the time of purchase, I didn't pay attention to certain details due to my lack of knowledge on the subject. After a while, I realized that the numeric keypad on the side took up unnecessary space for me since I don't use it much in my daily tasks, and it makes the keyboard quite large. Another point is that this keyboard has Outemu clicky switches, known for being budget switches with a reputation for not performing well in the long run. The keycaps are made of ABS plastic, which is not the most durable, considering PBT plastic is more resistant.
 
-![Teclado Cima](/src/content/images/t-dagger-destroyer/teclado-cima.jpeg)
+![Teclado Cima](/src/assets/t-dagger-destroyer/teclado-cima.jpeg)
 
 Certainly, not everything was negative. As mentioned, the product had an excellent cost-benefit ratio at the time, and this perception persists to this day. One notable advantage is the hot-swappable capability, allowing for the convenient exchange of switches. The issue associated with Outemu switches can be easily addressed with this feature.
 
