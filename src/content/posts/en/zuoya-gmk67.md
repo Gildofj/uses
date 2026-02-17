@@ -4,13 +4,13 @@ description: Gamer custom keyboard
 pubDate: 2024-02-04T12:56Z
 tags:
   - Computação
-heroImage: /src/assets/zuoya-gmk67/zuoya-gmk67.jpg
+heroImage: /../../../assets/zuoya-gmk67/zuoya-gmk67.jpg
 videos:
-  - /src/assets/zuoya-gmk67/zuoya-gmk67-write.mp4
+  - /../../../assets/zuoya-gmk67/zuoya-gmk67-write.mp4
 ---
 At the moment I am writing this, this is my newest acquisition, the GMK67 from Zuoya, it is a keyboard that I have been dating for a long time, it is from a line of customized keyboards that already come with some factory modifications, this type of keyboard aims to provide a smooth and pleasant typing, whether in the act of typing itself or the sound of typing. It has a great quality in its finish being very resistant and with a very beautiful base, it has an excellent height, being larger than a usual keyboard, in addition to two levels of adjustment for you to leave in the best way for your use.
 
-![GMK67 Cima](/src/assets/zuoya-gmk67/gmk67-cima.jpg)
+![GMK67 Cima](/../../../assets/zuoya-gmk67/gmk67-cima.jpg)
 
 As I informed earlier, it is a customizable keyboard, so it came only with its base and its PCB, so I had to buy the switches and the keycaps separately, I chose to do it this way because it is cheaper and also open my range of possibilities to have a better typing experience.
 
@@ -18,7 +18,7 @@ The switches I chose are the Akko V3 Pro Cream Yellow, this switch has a sound a
 
 For the keycaps I opted for the pudding, they are keycaps with a great cost benefit, they have a very affordable price, having a finish in PBT plastic that is the best type for construction of peripherals because it is more resistant and durable, in addition to having the transparent bottom giving a very beautiful effect for RGB keyboards like mine.
 
-![GMK67 Mesa](/src/assets/zuoya-gmk67/gmk67-mesa.jpg)
+![GMK67 Mesa](/../../../assets/zuoya-gmk67/gmk67-mesa.jpg)
 
 Currently this is my main keyboard, making my daily life much more comfortable both at work and in my leisure moments. So far this was my best acquisition after my desktop computer.
 
