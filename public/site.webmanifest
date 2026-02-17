@@ -1,7 +1,7 @@
 {
     "name": "gildofj.dev",
     "short_name": "gildofj",
-    "description": "Meu setup e equipamentos uso para trabalho e entretenimento.",
+    "description": "Meu setup e equipamentos que uso para trabalho e entretenimento.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",

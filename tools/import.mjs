@@ -29,7 +29,7 @@ const vaultPath = findObsidianVault();
 const postsDir = path.join(vaultPath, "Uses/Posts");
 const imagesDir = path.join(vaultPath, "Uses/Images");
 const contentDir = path.join(__dirname, "src/content/posts");
-const assetsDir = path.join(__dirname, "public/assets");
+const contentImagesDir = path.join(__dirname, "src/content/images");
 
 const normalizePath = path => path.replace(/ /g, "-").toLowerCase();
 
@@ -138,7 +138,7 @@ const isCI = process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
 if (isCI) {
   console.log("Running in CI environment. Performing one-time sync.");
   syncFilesBetweenDirectories(postsDir, contentDir);
-  syncFilesBetweenDirectories(imagesDir, assetsDir);
+  syncFilesBetweenDirectories(imagesDir, contentImagesDir);
   console.log("Sync completed.");
 } else {
   const watchAndCopyFiles = (sourceDir, targetDir) => {
@@ -162,5 +162,5 @@ if (isCI) {
   };
 
   watchAndCopyFiles(postsDir, contentDir);
-  watchAndCopyFiles(imagesDir, assetsDir);
+  watchAndCopyFiles(imagesDir, contentImagesDir);
 }
