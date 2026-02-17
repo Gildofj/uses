@@ -69,7 +69,7 @@ const normalizeImagesToAstroMd = filePath => {
       const imageAlt = imageName.split(".")[0];
       modifiedContent = modifiedContent.replace(
         `![[${image}]]`,
-        `![${imageAlt}](./assets/${directoryName}/${normalizedImage})`,
+        `![${imageAlt}](../../../assets/${directoryName}/${normalizedImage})`,
       );
     });
     return modifiedContent;
