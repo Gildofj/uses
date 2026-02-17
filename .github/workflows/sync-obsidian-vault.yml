@@ -82,15 +82,16 @@ jobs:
           git config user.name "Obsidian Sync Bot"
           git config user.email "bot@obsidian-sync.local"
 
+          # Stash changes, pull remote, restore changes on top
+          git stash
           git pull --rebase origin master
+          git stash pop
 
+          # Stage, commit and push
           git add -A
-
-          # Commit com mensagem detalhada
           git commit -m "chore: sync Obsidian vault changes" \
                      -m "Synced at: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
                      -m "Trigger: ${{ github.event_name }}"
-
           git push origin master
 
       - name: Summary
