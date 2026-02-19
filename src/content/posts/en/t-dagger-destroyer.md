@@ -5,7 +5,7 @@ pubDate: 2024-01-14T01:21Z
 tags:
   - Computação
   - Deprecated
-heroImage: ../../../assets/images/t-dagger-destroyer/t-dagger-destroyer.jpg
+heroImage: ../../../assets/t-dagger-destroyer/t-dagger-destroyer.jpg
 ---
 Being an avid gamer, especially in competitive games, I've always had an interest in getting a mechanical keyboard. After some time, I found this one, which was a great cost-effective choice at the time. Over time, I discovered that aside from being great for gaming, mechanical keyboards also make typing much more comfortable. It turned out to be the perfect match for a peripheral useful for both leisure and work.
 
