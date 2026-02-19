@@ -42,19 +42,6 @@ const t = useTranslate(locale);
         <div>{description}</div>
         <hr class="border-top border-zinc-400 my-4" />
         <slot />
-        <!-- {
-          videos && videos.length > 0 && (
-            <video
-              class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-              controls
-            >
-              {videos.map((video: string) => (
-                <source src={video} type="video/mp4" />
-              ))}
-              {t("post.videoTagError")}
-            </video>
-          )
-        } -->
         <span
           class="underline underline-offset-2 hover:text-purple-500 decoration-purple-500 text-2xl"
         ></span>
