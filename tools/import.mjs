@@ -28,8 +28,10 @@ const findObsidianVault = () => {
 const vaultPath = findObsidianVault();
 const postsDir = path.join(vaultPath, "Uses/Posts");
 const imagesDir = path.join(vaultPath, "Uses/Images");
+const videosDir = path.join(vaultPath, "Uses/Videos");
 const contentDir = path.join(__dirname, "src/content/posts");
 const assetsDir = path.join(__dirname, "src/assets");
+const videosPublicDir = path.join(__dirname, "public/videos");
 
 const normalizePath = path => path.replace(/ /g, "-").toLowerCase();
 
@@ -46,35 +48,40 @@ const normalizeImagesToAstroMd = filePath => {
 
   const regexToGetValue = /!\[\[([^[\]]*)\]\]/g;
   const regexToReplace = /[!\[\]]/g;
-  const fileContent = fs.readFileSync(filePath, "utf-8");
 
+  const fileContent = fs.readFileSync(filePath, "utf-8");
   const pathsParts = filePath.split(/[/\\]/);
   const directoryName = normalizePath(
     pathsParts[pathsParts.length - 1].replace(".md", ""),
   );
 
   console.log(`normalizeImagesToAstroMd -> directoryName: ${directoryName}`);
-
-  const images =
+  const assets =
     fileContent
       .match(regexToGetValue)
-      ?.map(image => image.replace(regexToReplace, "")) || [];
-
-  if (images.length) {
-    console.log("normalizeImagesToAstroMd -> has images to normalize");
+      ?.map(asset => asset.replace(regexToReplace, "")) || [];
+  if (assets.length) {
+    console.log("normalizeImagesToAstroMd -> has assets to normalize");
     let modifiedContent = fileContent;
-    images.forEach(image => {
-      const imageName = path.basename(image);
-      const normalizedImage = normalizePath(imageName);
-      const imageAlt = imageName.split(".")[0];
-      modifiedContent = modifiedContent.replace(
-        `![[${image}]]`,
-        `![${imageAlt}](../../../assets/${directoryName}/${normalizedImage})`,
-      );
+    assets.forEach(asset => {
+      const assetName = path.basename(asset);
+      const normalizedAsset = normalizePath(assetName);
+      const imageAlt = assetName.split(".")[0];
+      const ext = assetName.split(".").pop().toLowerCase();
+      const isVideo = ext === "mp4";
+
+      const assetPath = isVideo
+        ? `/videos/${directoryName}/${normalizedAsset}`
+        : `../../../assets/${directoryName}/${normalizedAsset}`;
+
+      const replacement = isVideo
+        ? `<video controls><source src="${assetPath}" type="video/mp4" />Your browser does not support the video tag.</video>`
+        : `![${imageAlt}](${assetPath})`;
+
+      modifiedContent = modifiedContent.replace(`![[${asset}]]`, replacement);
     });
     return modifiedContent;
   }
-
   console.log(`normalizeImagesToAstroMd -> end for ${filePath}`);
   return fileContent;
 };
@@ -139,6 +146,7 @@ if (isCI) {
   console.log("Running in CI environment. Performing one-time sync.");
   syncFilesBetweenDirectories(postsDir, contentDir);
   syncFilesBetweenDirectories(imagesDir, assetsDir);
+  syncFilesBetweenDirectories(videosDir, videosPublicDir);
   console.log("Sync completed.");
 } else {
   const watchAndCopyFiles = (sourceDir, targetDir) => {
@@ -163,4 +171,5 @@ if (isCI) {
 
   watchAndCopyFiles(postsDir, contentDir);
   watchAndCopyFiles(imagesDir, assetsDir);
+  watchAndCopyFiles(videosDir, videosPublicDir);
 }

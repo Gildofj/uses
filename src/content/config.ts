@@ -10,7 +10,6 @@ const posts = defineCollection({
       updatedDate: z.coerce.date().optional(),
       heroImage: image().optional().nullable(),
       tags: z.string().array().optional(),
-      videos: z.string().array().optional(),
     }),
 });
 
