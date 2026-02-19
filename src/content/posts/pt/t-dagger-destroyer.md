@@ -5,9 +5,7 @@ pubDate: 2024-01-14T01:21Z
 tags:
   - Computação
   - Deprecated
-heroImage: ../../../assets/t-dagger-destroyer/t-dagger-destroyer.jpg
-videos:
-  - ../../../assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4
+heroImage: ../../../assets/images/t-dagger-destroyer/t-dagger-destroyer.jpg
 ---
 Como curto muito jogar, principalmente jogos competitivos, sempre tive o interesse de comprar um teclado mecânico, e após um tempo encontrei esse que na época foi um ótimo custo benefício, e com o tempo descobri que além de ser ótimo para jogar, teclados mecânicos tornavam a digitação muito mais confortável, então deu o match perfeito de um periférico útil tanto para o lazer quanto para o trabalho.
 
@@ -20,3 +18,4 @@ Certamente, nem tudo foi negativo. Conforme mencionado, o produto apresentou uma
 Além disso, destaco a qualidade do acabamento e das teclas, que se mantêm notavelmente bem-feitos. As teclas doubleshot, por exemplo, são uma excelente adição, prevenindo o desgaste por uso constante. O acabamento em alumínio não apenas contribui para a estética, mas também confere uma estrutura de teclado mais robusta e resistente.
 
 Você pode acompanhar abaixo o som de digitação do T-Dagger Destroyer com os switches azuis:
+![T-Dagger Destroyer Write](../../../assets/t-dagger-destroyer/t-dagger-destroyer-write.mp4)
