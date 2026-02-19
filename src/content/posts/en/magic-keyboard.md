@@ -6,6 +6,7 @@ tags:
   - Computação
 heroImage: ../../../assets/magic-keyboard/magic-keyboard.jpeg
 ---
+
 After using mechanical keyboards for some time, I decided to try something quite different. I approached it with some apprehension, I confess, but I was pleasantly surprised by my experience. The Apple Magic Keyboard, aside from being more compact and giving a cleaner look to your workspace, provides excellent typing comfort. It features the Apple US layout, which, in my opinion, is the most ergonomic in their current lineup. Currently, it has become my primary keyboard for daily work, and since using it, I've felt more productive with less hand fatigue after extended hours of work.
 
 ![Magic Keyboard In Use](../../../assets/magic-keyboard/magic-keyboard-in-use.jpg)
