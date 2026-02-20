@@ -6,7 +6,6 @@ tags:
   - Computação
 heroImage: ../../../assets/zuoya-gmk67/zuoya-gmk67.jpg
 ---
-
 At the moment I am writing this, this is my newest acquisition, the GMK67 from Zuoya, it is a keyboard that I have been dating for a long time, it is from a line of customized keyboards that already come with some factory modifications, this type of keyboard aims to provide a smooth and pleasant typing, whether in the act of typing itself or the sound of typing. It has a great quality in its finish being very resistant and with a very beautiful base, it has an excellent height, being larger than a usual keyboard, in addition to two levels of adjustment for you to leave in the best way for your use.
 
 ![GMK67 Cima](../../../assets/zuoya-gmk67/gmk67-cima.jpg)
