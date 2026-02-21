@@ -3,8 +3,9 @@ import DropdownMenuLocale from "./DropdownMenuLocale.tsx";
 import DropdownMenuNav from "./DropdownMenuNav.tsx";
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggleButton from "./ThemeToggleButton.tsx";
+import LogoIcon from "./_UI/LogoIcon.astro";
 import { PORTFOLIO_URL, REPO_URL } from "../consts";
-import { CodeIcon, GithubLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon } from "@phosphor-icons/react";
 import { getUrlLocale, useTranslate } from "../i18n/utils";
 
 const locale = getUrlLocale(Astro.url);
@@ -20,7 +21,7 @@ const t = useTranslate(locale);
         class="no-underline inline-flex items-center gap-1 md:gap-2"
         href={`/${locale}`}
       >
-        <CodeIcon style={{ fontSize: "1.7rem" }} />
+        <LogoIcon />
         <div>gildofj<span class="text-purple-500">.dev</span></div>
       </a>
     </h2>

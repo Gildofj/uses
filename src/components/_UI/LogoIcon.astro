@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  size?: number;
+}
+
+const { size = 32 } = Astro.props;
+---
+
+<Image
+  src="/logo-dark.svg"
+  alt="Logo"
+  width={size}
+  height={size}
+  class="dark:hidden"
+/>
+<Image
+  src="/logo-light.svg"
+  alt="Logo"
+  width={size}
+  height={size}
+  class="hidden dark:block"
+/>
