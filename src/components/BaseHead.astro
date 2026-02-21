@@ -21,6 +21,7 @@ const { title, description, image = `${base}cover.jpeg` } = Astro.props;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#a855f7" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -45,79 +46,7 @@ const { title, description, image = `${base}cover.jpeg` } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Favicon -->
-<meta name="application-name" content="gildofj.dev uses" />
-<meta name="theme-color" content="#a855f7" />
-<meta name="msapplication-TileColor" content="#a855f7" />
-<meta name="msapplication-TileImage" content={`${base}ms-icon-144x144.png`} />
-<meta
-  name="msapplication-square70x70logo"
-  content={`${base}mstile-70x70.png`}
-/>
-<meta
-  name="msapplication-square150x150logo"
-  content={`${base}mstile-150x150.png`}
-/>
-<meta
-  name="msapplication-wide310x150logo"
-  content={`${base}mstile-310x150.png`}
-/>
-<meta
-  name="msapplication-square310x310logo"
-  content={`${base}mstile-310x310.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="57x57"
-  href={`${base}apple-touch-icon-57x57.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="60x60"
-  href={`${base}apple-touch-icon-60x60.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="72x72"
-  href={`${base}apple-touch-icon-72x72.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="76x76"
-  href={`${base}apple-touch-icon-76x76.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="114x114"
-  href={`${base}apple-touch-icon-114x114.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="120x120"
-  href={`${base}apple-touch-icon-120x120.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href={`${base}apple-touch-icon-144x144.png`}
-/>
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="152x152"
-  href={`${base}apple-touch-icon-152x152.png`}
-/>
-<link
-  rel="icon"
-  type="image/png"
-  href={`${base}favicon-196x196.png`}
-  sizes="196x196"
-/>
-<link rel="manifest" href="/site.webmanifest" />
-<link
-  rel="icon"
-  type="image/png"
-  href={`${base}favicon-96x96.png`}
-  sizes="96x96"
-/>
+<link rel="icon" href={`${base}favicon.ico`} />
 <link
   rel="icon"
   type="image/png"
@@ -130,12 +59,22 @@ const { title, description, image = `${base}cover.jpeg` } = Astro.props;
   href={`${base}favicon-16x16.png`}
   sizes="16x16"
 />
+
+<!-- Apple -->
 <link
-  rel="icon"
-  type="image/png"
-  href={`${base}favicon-128.png`}
-  sizes="128x128"
+  rel="apple-touch-icon"
+  href={`${base}apple-touch-icon.png`}
+  sizes="180x180"
 />
+<meta name="apple-mobile-web-app-title" content={title} />
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- PWA -->
+<link rel="manifest" href={`${base}site.webmanifest`} />
 
 <!-- Permission-Policy -->
 <meta
@@ -149,10 +88,15 @@ const { title, description, image = `${base}cover.jpeg` } = Astro.props;
   content="AzjfR1JEdo5QFJAHE9ggfNeBrRAASpeT2drc49Rbgt8"
 />
 
+<!-- Astro Transition Animations -->
 <ClientRouter />
 
 <!-- Google Analytics -->
-<script src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"></script>
+<script
+  is:inline
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-QZ6F1ZHLVK"></script>
+
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
