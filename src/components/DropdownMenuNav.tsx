@@ -14,6 +14,7 @@ export default function DropdownMenuNav() {
     <DropdownMenu
       iconButton={<ListIcon className="h-5 w-5" />}
       className="w-56"
+      buttonClassName="w-10 h-10"
     >
       <DropdownMenuItem className="lg:hidden" href={`/${locale}`}>
         {t("nav.home")}
