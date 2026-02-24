@@ -5,6 +5,11 @@ export enum LOCALE {
   EN = "en",
 }
 
+export const COUNTRY_FLAG = {
+  [LOCALE.PT]: "BR",
+  [LOCALE.EN]: "US",
+};
+
 export function useLocale() {
   const [locale, setLocale] = useState<LOCALE>(() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {

@@ -4,19 +4,24 @@ import { classNames } from "../../utils/classNames";
 
 interface DropdownMenuProps {
   iconButton: ReactNode;
+  buttonClassName?: string;
   className?: string;
   children: ReactNode[];
 }
 
 export default function DropdownMenu({
   iconButton,
+  buttonClassName,
   className,
   children,
 }: DropdownMenuProps) {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative flex text-left">
       <MenuButton
-        className="inline-flex justify-center rounded-md border border-zinc-400 dark:border-zinc-700 px-2 py-2 text-sm font-medium shadow-sm hover:bg-purple-200 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 transition-all cursor-pointer"
+        className={classNames(
+          "inline-flex items-center rounded-md border border-zinc-400 dark:border-zinc-700 px-2 py-2 text-sm font-medium shadow-sm hover:bg-purple-200 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 transition-all cursor-pointer",
+          buttonClassName || "",
+        )}
         aria-label="menu"
       >
         {iconButton}
