@@ -12,21 +12,23 @@ const locale = getUrlLocale(Astro.url);
 const t = useTranslate(locale);
 ---
 
-<header class="fixed w-full p-2 z-20 backdrop-blur-md font-mono top-0">
-  <nav class="flex items-center justify-between relative min-h-[60px]">
+<header
+  class="sticky top-6 mx-auto w-fit max-w-[95%] z-50 backdrop-blur-xl bg-white/80 dark:bg-zinc-900/80 rounded-3xl shadow-soft-flat font-mono transition-all duration-300"
+>
+  <nav class="flex items-center justify-between relative min-h-[60px] px-4 md:px-6 gap-4 md:gap-8">
     <h2
-      class="font-semibold tracking-tighter py-2 px-1 md:px-2 font-mono text-lg leading-none text-nowrap whitespace-nowrap"
+      class="font-semibold tracking-tighter py-2 font-mono text-lg leading-none text-nowrap whitespace-nowrap"
     >
       <a
-        class="no-underline inline-flex items-center gap-1 md:gap-2"
+        class="no-underline inline-flex items-center gap-2"
         href={`/${locale}`}
       >
         <LogoIcon />
-        <div>gildofj<span class="text-purple-500">.dev</span></div>
+        <div class="font-bold">gildofj<span class="text-primary font-black">.blog</span></div>
       </a>
     </h2>
     <div
-      class="items-center gap-6 hidden lg:flex absolute left-1/2 translate-x-[-50%]"
+      class="items-center gap-6 hidden lg:flex"
     >
       <HeaderLink href={`/${locale}`}>{t("nav.home")}</HeaderLink>
       <HeaderLink href={PORTFOLIO_URL}>{t("nav.about")}</HeaderLink>
@@ -39,7 +41,7 @@ const t = useTranslate(locale);
         {t("nav.source")}
       </HeaderLink>
     </div>
-    <div class="flex items-center gap-2 md:gap-3 px-2">
+    <div class="flex items-center gap-2 md:gap-3">
       <ThemeToggleButton client:load />
       <div class="hidden lg:block">
         <DropdownMenuLocale client:load client:only />

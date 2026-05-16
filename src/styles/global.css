@@ -55,8 +55,29 @@
 
 @layer base {
   :root {
+    --background: #faf5ff;
+    --foreground: #18181b;
+    --color-primary: hsl(270 100% 68%);
+    --color-success: hsl(160 84% 52%);
+    --color-alert: hsl(0 96% 70%);
+
     --font-sans: var(--font-inter);
     --font-mono: var(--font-fira-code);
+
+    /* Neumorphic Shadows - Light Mode */
+    --shadow-flat: 8px 8px 16px rgba(0, 0, 0, 0.05), -8px -8px 16px rgba(255, 255, 255, 0.8);
+    --shadow-pressed: inset 4px 4px 8px rgba(0, 0, 0, 0.05), inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    --shadow-hover: 12px 12px 24px rgba(0, 0, 0, 0.08), -12px -12px 24px rgba(255, 255, 255, 0.9);
+  }
+
+  .dark {
+    --background: #18181b;
+    --foreground: #d4d4d8;
+
+    /* Neumorphic Shadows - Dark Mode */
+    --shadow-flat: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.03);
+    --shadow-pressed: inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+    --shadow-hover: 12px 12px 24px rgba(0, 0, 0, 0.5), -12px -12px 24px rgba(255, 255, 255, 0.05);
   }
 
   html {
@@ -66,6 +87,9 @@
     overflow-wrap: break-word;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   body {
@@ -73,10 +97,34 @@
     scroll-behavior: smooth;
     min-height: 100vh;
     min-height: 100dvh;
+    background-color: var(--background);
+    color: var(--foreground);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Grid Background Pattern */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .dark body::before {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   }
 
   *:focus-visible {
-    outline: 2px solid currentColor;
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
   }
 
@@ -109,6 +157,12 @@
   h5,
   h6 {
     overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   code,
@@ -152,6 +206,34 @@
     font-family: var(--font-fira-code);
   }
 
+  /* Neumorphic Shadow Utilities */
+  .shadow-soft-flat,
+  .shadow-neu-flat {
+    box-shadow: var(--shadow-flat);
+  }
+
+  .shadow-soft-pressed,
+  .shadow-neu-pressed {
+    box-shadow: var(--shadow-pressed);
+  }
+
+  .shadow-soft-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-soft-hover:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari and Opera */
+  }
+
   /* Animation utilities */
   .animate-fade-in {
     animation: var(--animate-fade-in);
@@ -160,6 +242,44 @@
   .animate-slide-in {
     animation: var(--animate-slide-in);
   }
+
+  /* Primary Color Utilities */
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+}
+
+/* Background Blobs */
+.bg-blob {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-blob-primary {
+  background-color: var(--color-primary);
+  opacity: 0.05;
+  top: -10%;
+  left: -10%;
+}
+
+.bg-blob-success {
+  background-color: var(--color-success);
+  opacity: 0.05;
+  bottom: -10%;
+  right: -10%;
 }
 
 /* Content sources for Tailwind v4 */

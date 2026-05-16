@@ -18,11 +18,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
   </head>
   <Body>
     <Header title={SITE_TITLE} />
-    <main class="pt-[76px]">
+    <main class="py-10">
       <Masthead />
       <Content>
-        <section>
-          <p class="mb-8 indent-4">
+        <section class="py-20 md:py-32 text-center max-w-3xl mx-auto">
+          <p class="mb-8 text-lg md:text-xl leading-relaxed opacity-90">
             This blog was conceived with the purpose of sharing my setup and
             improving my skills with some recent technologies. Currently, I work
             as a software developer, more specifically as Full Stack, and in my
@@ -32,18 +32,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
             opportunity to follow the evolution of my skills as a developer and
             of my own setup. I would like to note that my inspiration to start
             this project came from indie developer <Link
+              class="text-primary font-bold hover:underline"
               href="https://github.com/craftzdog"
               target="_blank">Craftzdog</Link
             >, who maintains the channels <Link
+              class="text-primary font-bold hover:underline"
               href="https://www.youtube.com/@devaslife"
               target="_blank">devaslife</Link
             > and <Link
+              class="text-primary font-bold hover:underline"
               href="https://www.youtube.com/@craftzdog"
               target="_blank">craftzdog</Link
             >.
           </p>
         </section>
-        <section>
+        <section class="py-20">
           <PostsList />
         </section>
         <CreatedWithSection />

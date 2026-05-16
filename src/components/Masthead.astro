@@ -6,10 +6,10 @@ const t = useTranslate(locale);
 const base = import.meta.env.BASE_URL;
 ---
 
-<section class="relative mb-6 h-80 flex justify-center items-center">
+<section class="relative py-20 md:py-32 flex justify-center items-center">
   <div class="absolute w-full h-full overflow-hidden">
     <video
-      class="absolute h-auto left-1/2 top-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 opacity-30"
+      class="absolute h-auto left-1/2 top-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 opacity-20 dark:opacity-10"
       poster={`${base}masthead-poster.png`}
       autoplay="autoplay"
       muted="muted"
@@ -27,12 +27,12 @@ const base = import.meta.env.BASE_URL;
       />
     </video>
   </div>
-  <div class="z-10 text-center px-8 drop-shadow-lg shadow-black">
-    <div class="uppercase text-sm mb-4">{t("masthead.welcome")}</div>
-    <div class="text-4xl font-mono font-medium">
+  <div class="z-10 text-center px-8">
+    <div class="uppercase text-sm mb-4 tracking-widest opacity-70 font-mono">{t("masthead.welcome")}</div>
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
       {t("masthead.welcomeTitle")}
-      <span class="text-purple-500">{t("masthead.welcomeTitle.highlight")}</span
+      <span class="text-primary">{t("masthead.welcomeTitle.highlight")}</span
       >
-    </div>
+    </h1>
   </div>
 </section>

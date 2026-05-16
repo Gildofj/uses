@@ -11,9 +11,9 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 
 <a
   data-active={isActive}
-  class="inline-block py-4 px-2 text-black dark:text-white no-underline active:font-bold border-b-4 border-solid border-transparent"
+  class="inline-block py-2 px-4 rounded-xl transition-all duration-300 hover:text-primary hover:bg-white/50 dark:hover:bg-zinc-800/50"
+  class:list={[className, { "text-primary font-bold shadow-soft-pressed": isActive }]}
   href={href}
-  class:list={[className]}
   {...props}
 >
   <slot />
